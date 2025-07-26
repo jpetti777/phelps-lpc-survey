@@ -46,6 +46,7 @@ const Footer = () => (
     </div>
   </div>
 );
+
 const ConfirmDialog = ({ isOpen, title, message, onConfirm, onCancel, singleButton = false, singleButtonOnly = false, buttonText = null }) => {
   if (!isOpen) return null;
 
@@ -552,15 +553,13 @@ const LPCProjectEvaluationSurvey = () => {
           setValidationErrors({});
           setConfirmDialog({ isOpen: false });
 
-          // Move to next project automatically
-          setTimeout(() => {
-            if (currentProject < projects.length - 1) {
-              setCurrentProject(currentProject + 1);
-            } else {
-              setCurrentPage('step2-selection');
-            }
-            window.scrollTo(0, 0);
-          }, 1000);
+          // Move to next project immediately without delay
+          if (currentProject < projects.length - 1) {
+            setCurrentProject(currentProject + 1);
+          } else {
+            setCurrentPage('step2-selection');
+          }
+          window.scrollTo(0, 0);
         },
         onCancel: () => setConfirmDialog({ isOpen: false })
       });
@@ -709,9 +708,11 @@ const LPCProjectEvaluationSurvey = () => {
   const renderWelcomePage = () => (
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto p-4 md:p-6">
-        <h1 className="text-2xl md:text-3xl font-bold mb-6">LPC Project Evaluation Survey</h1>
+        <div className="pt-6">
+          <h1 className="text-2xl md:text-3xl font-bold mb-6">LPC Project Evaluation Survey</h1>
+        </div>
 
-        <div className="mb-6">
+        <div className="bg-white border border-gray-300 rounded-lg p-4 md:p-6 mb-6">
           <h2 className="text-lg md:text-xl font-bold mb-4">Instructions</h2>
           <p className="mb-4 text-sm md:text-base">
             This survey will walk you through a two-step process for evaluating the proposed projects. 
@@ -730,7 +731,7 @@ const LPCProjectEvaluationSurvey = () => {
           </div>
         </div>
 
-        <div className="mb-6">
+        <div className="bg-white border border-gray-300 rounded-lg p-4 md:p-6 mb-6">
           <h2 className="text-lg md:text-xl font-bold mb-4">How We Will Use This Data</h2>
           <p className="mb-4 text-sm md:text-base">
             The evaluations from all LPC members will be aggregated to create an overall rating for each project, either High, Medium, or Low. At LPC Meeting 5, we will present which projects fell into each of the High Rating, Medium Rating, and Low Rating categories. This will help the LPC make decisions about which projects to keep under consideration for potential funding and which projects could be removed. <em>Note: Your individual responses will remain anonymous. Other LPC members will not be able to see your answers.</em>
@@ -779,11 +780,13 @@ const LPCProjectEvaluationSurvey = () => {
     return (
       <div className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto p-4 md:p-6">
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">Step 1: Project Evaluation</h1>
-          <p className="text-lg text-gray-600 mb-6">Project {currentProject + 1} of {projects.length}</p>
+          <div className="pt-6">
+            <h1 className="text-2xl md:text-3xl font-bold mb-6">Step 1: Project Evaluation</h1>
+          </div>
 
           {/* Project Info in Gray Box */}
           <div className="bg-gray-100 rounded-lg p-4 md:p-6 mb-6">
+            <p className="text-lg text-black mb-4">Project {currentProject + 1} of {projects.length}</p>
             <h2 className="text-xl md:text-2xl font-bold mb-2">{project.title}</h2>
             <p className="text-gray-600 mb-4 text-sm md:text-base">{project.location}</p>
 
@@ -791,7 +794,8 @@ const LPCProjectEvaluationSurvey = () => {
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-32 md:h-48 object-cover rounded-lg"
+                className="w-full object-cover rounded-lg"
+                style={{ height: 'auto' }}
               />
             </div>
 
@@ -994,9 +998,9 @@ const LPCProjectEvaluationSurvey = () => {
               Next Project
             </button>
           </div>
-        </div>
 
-        <Footer />
+          <Footer />
+        </div>
       </div>
     );
   };
@@ -1025,7 +1029,9 @@ const LPCProjectEvaluationSurvey = () => {
         {/* Sticky Header Section */}
         <div className="sticky top-0 bg-white border-b-2 border-gray-200 z-40 p-4 md:p-6">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-2xl md:text-3xl font-bold mb-6">Step 2: Project Selection</h1>
+            <div className="pt-6">
+              <h1 className="text-2xl md:text-3xl font-bold mb-6">Step 2: Project Selection</h1>
+            </div>
 
             {/* Instructions Box */}
             <div className="bg-gray-100 rounded-lg p-4 md:p-6 mb-6">
@@ -1057,71 +1063,86 @@ const LPCProjectEvaluationSurvey = () => {
 
         {/* Scrollable Content */}
         <div className="max-w-6xl mx-auto p-4 md:p-6">
-
-
           <div className="space-y-4 md:space-y-6 mb-8">
             {sortedProjects.map(project => {
               const eval_ = evaluations[project.id];
               const isRecused = eval_?.recused;
+              const isSelected = projectSelections[project.id] || false;
               const category = categories[project.id];
               const categoryColor = category === 'High' ? 'bg-green-100 text-green-800' : 
                                    category === 'Medium' ? 'bg-yellow-100 text-yellow-800' : 
                                    'bg-red-100 text-red-800';
 
+              // Card styling based on selection
+              const cardBorderClass = isSelected && !isRecused ? 'border-blue-600 border-2' : 'border border-gray-300';
+              const cardBackgroundClass = isSelected && !isRecused ? 'bg-blue-50' : (isRecused ? 'bg-gray-50' : 'bg-white');
+
               return (
-                <div key={project.id} className={`rounded-lg shadow-lg border ${isRecused ? 'bg-gray-50 opacity-75' : 'bg-white'}`}>
-                  <div className="flex items-center p-4 md:p-6">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className={`w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg flex-shrink-0 mr-4 ${isRecused ? 'grayscale' : ''}`}
-                    />
+                <div key={project.id} className={`rounded-lg shadow-lg ${cardBorderClass} ${cardBackgroundClass} ${isRecused ? 'opacity-75' : ''}`}>
+                  <div className="flex p-4 md:p-6">
+                    {/* Image - 2:1 ratio, top-left aligned */}
+                    <div className="flex-shrink-0 mr-4">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className={`w-24 h-12 md:w-32 md:h-16 object-cover rounded-lg ${isRecused ? 'grayscale' : ''}`}
+                      />
+                    </div>
 
                     <div className="flex-grow">
-                      <h3 className={`text-lg md:text-xl font-bold mb-2 ${isRecused ? 'text-gray-500' : ''}`}>{project.title}</h3>
-                      <p className={`mb-3 text-sm md:text-base ${isRecused ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
-
-                      {isRecused ? (
-                        <div className="bg-gray-300 text-gray-600 px-3 py-1 rounded-full text-sm font-medium inline-block">
-                          Recused
-                        </div>
-                      ) : (
-                        <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${categoryColor}`}>
+                      {/* Rating above title */}
+                      {!isRecused && (
+                        <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-2 ${categoryColor}`}>
                           Your Rating: {category}
                         </div>
                       )}
-                    </div>
+                      {isRecused && (
+                        <div className="bg-gray-300 text-gray-600 px-3 py-1 rounded-full text-sm font-medium inline-block mb-2">
+                          Recused
+                        </div>
+                      )}
 
-                    <div className="text-center mr-6">
-                      <p className={`font-semibold text-sm md:text-base ${isRecused ? 'text-gray-400' : ''}`}>
-                        NY Forward Request
-                      </p>
-                      <p className={`font-bold text-lg ${isRecused ? 'text-gray-400' : 'text-black'}`}>
-                        ${project.nyForwardRequest.toLocaleString()}
-                      </p>
-                    </div>
+                      {/* Project title */}
+                      <h3 className={`text-lg md:text-xl font-bold mb-2 ${isRecused ? 'text-gray-500' : ''}`}>{project.title}</h3>
 
-                    {!isRecused && (
-                      <div className="flex-shrink-0">
-                        <label className="flex items-center space-x-3">
-                          <input
-                            type="checkbox"
-                            checked={projectSelections[project.id] || false}
-                            onChange={(e) => {
-                              // Double-check that project is not recused before allowing selection
-                              if (!evaluations[project.id]?.recused) {
-                                setProjectSelections(prev => ({
-                                  ...prev,
-                                  [project.id]: e.target.checked
-                                }));
-                              }
-                            }}
-                            className="w-4 h-4 flex-shrink-0"
-                          />
-                          <span className="font-medium text-sm md:text-base">Fund this Project</span>
-                        </label>
+                      {/* Project location */}
+                      <p className={`mb-3 text-sm ${isRecused ? 'text-gray-400' : 'text-gray-600'}`}>{project.location}</p>
+
+                      {/* Project description */}
+                      <p className={`mb-4 text-sm md:text-base ${isRecused ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
+
+                      {/* NY Forward Request */}
+                      <div className="mb-4">
+                        <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
+                          NY Forward Request: <span className={`font-bold text-lg ${isRecused ? 'text-gray-400' : 'text-black'}`}>
+                            ${project.nyForwardRequest.toLocaleString()}
+                          </span>
+                        </p>
                       </div>
-                    )}
+
+                      {/* Fund this Project checkbox - highlighted */}
+                      {!isRecused && (
+                        <div className="bg-blue-100 border-2 border-blue-300 rounded-lg p-3 inline-block">
+                          <label className="flex items-center space-x-3 cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={projectSelections[project.id] || false}
+                              onChange={(e) => {
+                                // Double-check that project is not recused before allowing selection
+                                if (!evaluations[project.id]?.recused) {
+                                  setProjectSelections(prev => ({
+                                    ...prev,
+                                    [project.id]: e.target.checked
+                                  }));
+                                }
+                              }}
+                              className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
+                            />
+                            <span className="font-bold text-blue-800 text-sm md:text-base">Fund this Project</span>
+                          </label>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               );
@@ -1154,6 +1175,8 @@ const LPCProjectEvaluationSurvey = () => {
               Submit
             </button>
           </div>
+
+          <Footer />
         </div>
       </div>
     );
