@@ -293,6 +293,20 @@ const LPCProjectEvaluationSurvey = () => {
     "This project does not align with any of the above goals."
   ];
 
+  // API warming function
+  const warmUpAPI = useCallback(async () => {
+    try {
+      const start = Date.now();
+      await fetch('/api/health');
+      const duration = Date.now() - start;
+      console.log(`✅ API warmed up (${duration}ms)`);
+      return true;
+    } catch (error) {
+      console.log('⚠️ API warmup failed (not critical):', error);
+      return false;
+    }
+  }, []);
+
   // Calculate score for a project
   const calculateScore = useCallback((projectId) => {
     const eval_ = evaluations[projectId];
@@ -424,6 +438,21 @@ const LPCProjectEvaluationSurvey = () => {
       setCategories(newCategories);
     }
   }, [evaluations]); // Only depend on evaluations, not on scores/categories to prevent loops
+
+  // Warm up API when user first arrives
+  useEffect(() => {
+    if (currentPage === 'welcome' && userName) {
+      // Only warm up once user enters their name (shows intent to proceed)
+      warmUpAPI();
+    }
+  }, [currentPage, userName, warmUpAPI]);
+
+  // Pre-warm before entering Step 2 (selection phase)
+  useEffect(() => {
+    if (currentPage === 'step2-selection') {
+      warmUpAPI();
+    }
+  }, [currentPage, warmUpAPI]);
 
   // Validate current project evaluation
   const validateCurrentProject = () => {
@@ -686,7 +715,11 @@ const LPCProjectEvaluationSurvey = () => {
         isOpen: true,
         title: 'Confirm Submission',
         message: `Are you sure you want to submit your survey?`,
-        onConfirm: () => {
+        onConfirm: async () => {
+          // Pre-warm API right before submission
+          console.log('🔥 Pre-warming API before submission...');
+          await warmUpAPI();
+
           const submissionData = {
             userName,
             timestamp: new Date().toISOString(),
