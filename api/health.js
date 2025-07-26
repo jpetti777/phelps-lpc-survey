@@ -1,9 +1,16 @@
+// Update your /api/health.js
 export default function handler(req, res) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS');
 
   if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
+  if (req.method === 'HEAD') {
+    // HEAD requests only need headers, no body
     res.status(200).end();
     return;
   }
