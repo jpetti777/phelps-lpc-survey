@@ -1026,43 +1026,29 @@ const LPCProjectEvaluationSurvey = () => {
 
     return (
       <div className="min-h-screen bg-white">
-        {/* Sticky Header Section */}
-        <div className="sticky top-0 bg-white border-b-2 border-gray-200 z-40 p-4 md:p-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="pt-6">
-              <h1 className="text-2xl md:text-3xl font-bold mb-6">Step 2: Project Selection</h1>
-            </div>
+        {/* Header Section */}
+        <div className="max-w-6xl mx-auto p-4 md:p-6">
+          <div className="pt-6">
+            <h1 className="text-2xl md:text-3xl font-bold mb-6">Step 2: Project Selection</h1>
+          </div>
 
-            {/* Instructions Box */}
-            <div className="bg-gray-100 rounded-lg p-4 md:p-6 mb-6">
-              <h2 className="text-lg font-bold mb-4">Instructions</h2>
-              <p className="mb-4 text-sm md:text-base">
-                Based on the evaluation you completed in Step 1, your rating for each project is shown below. The ratings are on a scale of High, Medium, Low. Use your ratings to help you decide which projects to fund.
-              </p>
-              <p className="mb-4 text-sm md:text-base">
-                Use the checkboxes below to decide which projects to fund. As you select projects, the calculator will automatically sum the total NY Forward Request amount. You will only be able to submit your survey if the total NY Forward Request amount is between $6 million to $8 million.
-              </p>
-              <p className="text-xs md:text-sm text-gray-600 italic">
-                <em>Remember: This is only an exercise. Your selections in this exercise are not definitive. There will be on-going discussions at the upcoming LPC meetings to narrow down the list of projects.</em>
-              </p>
-            </div>
-
-            {/* Total Calculator */}
-            <div className="mb-6">
-              <div className={`p-4 rounded-lg font-bold text-lg ${calculatorColor}`}>
-                Total NY Forward Request: ${total.toLocaleString()}
-              </div>
-              {!isValidTotal && hasSelections && (
-                <p className="text-red-600 mt-2 text-sm md:text-base">
-                  The Total NY Forward Request should be between $6,000,000 to $8,000,000.
-                </p>
-              )}
-            </div>
+          {/* Instructions Box */}
+          <div className="bg-gray-100 rounded-lg p-4 md:p-6 mb-6">
+            <h2 className="text-lg font-bold mb-4">Instructions</h2>
+            <p className="mb-4 text-sm md:text-base">
+              Based on the evaluation you completed in Step 1, your rating for each project is shown below. The ratings are on a scale of High, Medium, Low. Use your ratings to help you decide which projects to fund.
+            </p>
+            <p className="mb-4 text-sm md:text-base">
+              Use the checkboxes below to decide which projects to fund. As you select projects, the calculator will automatically sum the total NY Forward Request amount. You will only be able to submit your survey if the total NY Forward Request amount is between $6 million to $8 million.
+            </p>
+            <p className="text-xs md:text-sm text-gray-600 italic">
+              <em>Remember: This is only an exercise. Your selections in this exercise are not definitive. There will be on-going discussions at the upcoming LPC meetings to narrow down the list of projects.</em>
+            </p>
           </div>
         </div>
 
         {/* Scrollable Content */}
-        <div className="max-w-6xl mx-auto p-4 md:p-6">
+        <div className="max-w-6xl mx-auto p-4 md:p-6 pb-48">
           <div className="space-y-4 md:space-y-6 mb-8">
             {sortedProjects.map(project => {
               const eval_ = evaluations[project.id];
@@ -1079,104 +1065,123 @@ const LPCProjectEvaluationSurvey = () => {
 
               return (
                 <div key={project.id} className={`rounded-lg shadow-lg ${cardBorderClass} ${cardBackgroundClass} ${isRecused ? 'opacity-75' : ''}`}>
-                  <div className="flex p-4 md:p-6">
-                    {/* Image - 2:1 ratio, top-left aligned */}
-                    <div className="flex-shrink-0 mr-4">
+                  <div className="p-4 md:p-6">
+                    {/* Rating above image */}
+                    {!isRecused && (
+                      <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${categoryColor}`}>
+                        Your Rating: {category}
+                      </div>
+                    )}
+                    {isRecused && (
+                      <div className="bg-gray-300 text-gray-600 px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
+                        Recused
+                      </div>
+                    )}
+
+                    {/* Image - medium size */}
+                    <div className="mb-4">
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className={`w-24 h-12 md:w-32 md:h-16 object-cover rounded-lg ${isRecused ? 'grayscale' : ''}`}
+                        className={`w-32 h-16 md:w-40 md:h-20 object-cover rounded-lg ${isRecused ? 'grayscale' : ''}`}
                       />
                     </div>
 
-                    <div className="flex-grow">
-                      {/* Rating above title */}
-                      {!isRecused && (
-                        <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-2 ${categoryColor}`}>
-                          Your Rating: {category}
-                        </div>
-                      )}
-                      {isRecused && (
-                        <div className="bg-gray-300 text-gray-600 px-3 py-1 rounded-full text-sm font-medium inline-block mb-2">
-                          Recused
-                        </div>
-                      )}
+                    {/* Project title */}
+                    <h3 className={`text-lg md:text-xl font-bold mb-2 ${isRecused ? 'text-gray-500' : ''}`}>{project.title}</h3>
 
-                      {/* Project title */}
-                      <h3 className={`text-lg md:text-xl font-bold mb-2 ${isRecused ? 'text-gray-500' : ''}`}>{project.title}</h3>
+                    {/* Project location */}
+                    <p className={`mb-3 text-sm ${isRecused ? 'text-gray-400' : 'text-gray-600'}`}>{project.location}</p>
 
-                      {/* Project location */}
-                      <p className={`mb-3 text-sm ${isRecused ? 'text-gray-400' : 'text-gray-600'}`}>{project.location}</p>
+                    {/* Project description */}
+                    <p className={`mb-4 text-sm md:text-base ${isRecused ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
 
-                      {/* Project description */}
-                      <p className={`mb-4 text-sm md:text-base ${isRecused ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
-
-                      {/* NY Forward Request */}
-                      <div className="mb-4">
-                        <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
-                          NY Forward Request: <span className={`font-bold text-lg ${isRecused ? 'text-gray-400' : 'text-black'}`}>
-                            ${project.nyForwardRequest.toLocaleString()}
-                          </span>
-                        </p>
-                      </div>
-
-                      {/* Fund this Project checkbox - highlighted */}
-                      {!isRecused && (
-                        <div className="bg-blue-100 border-2 border-blue-300 rounded-lg p-3 inline-block">
-                          <label className="flex items-center space-x-3 cursor-pointer">
-                            <input
-                              type="checkbox"
-                              checked={projectSelections[project.id] || false}
-                              onChange={(e) => {
-                                // Double-check that project is not recused before allowing selection
-                                if (!evaluations[project.id]?.recused) {
-                                  setProjectSelections(prev => ({
-                                    ...prev,
-                                    [project.id]: e.target.checked
-                                  }));
-                                }
-                              }}
-                              className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
-                            />
-                            <span className="font-bold text-blue-800 text-sm md:text-base">Fund this Project</span>
-                          </label>
-                        </div>
-                      )}
+                    {/* NY Forward Request */}
+                    <div className="mb-4">
+                      <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
+                        NY Forward Request: <span className={`font-bold text-lg ${isRecused ? 'text-gray-400' : 'text-black'}`}>
+                          ${project.nyForwardRequest.toLocaleString()}
+                        </span>
+                      </p>
                     </div>
+
+                    {/* Fund this Project checkbox - highlighted */}
+                    {!isRecused && (
+                      <div className="bg-blue-100 border-2 border-blue-300 rounded-lg p-3 inline-block">
+                        <label className="flex items-center space-x-3 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={projectSelections[project.id] || false}
+                            onChange={(e) => {
+                              // Double-check that project is not recused before allowing selection
+                              if (!evaluations[project.id]?.recused) {
+                                setProjectSelections(prev => ({
+                                  ...prev,
+                                  [project.id]: e.target.checked
+                                }));
+                              }
+                            }}
+                            className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
+                          />
+                          <span className="font-bold text-blue-800 text-sm md:text-base">Fund this Project</span>
+                        </label>
+                      </div>
+                    )}
                   </div>
                 </div>
               );
             })}
           </div>
+        </div>
 
-          <div className="flex justify-between">
-            <button
-              onClick={() => {
-                // Clear validation errors when going back to evaluation
-                setValidationErrors({});
-                setCurrentProject(projects.length - 1);
-                setCurrentPage('evaluation');
-                window.scrollTo(0, 0);
-              }}
-              className="px-4 md:px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700"
-            >
-              Previous Page
-            </button>
+        {/* Sticky Footer with Total Calculator, Navigation, and Footer */}
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-lg z-50 p-4">
+          <div className="max-w-6xl mx-auto">
+            {/* Total Calculator */}
+            <div className={`p-4 rounded-lg font-bold text-lg mb-4 ${calculatorColor}`}>
+              Total NY Forward Request: ${total.toLocaleString()}
+            </div>
+            {!isValidTotal && hasSelections && (
+              <p className="text-red-600 mb-4 text-sm md:text-base">
+                The Total NY Forward Request should be between $6,000,000 to $8,000,000.
+              </p>
+            )}
 
-            <button
-              onClick={handleSubmit}
-              disabled={!isValidTotal}
-              className={`px-4 md:px-6 py-3 rounded-lg font-medium ${
-                isValidTotal
-                  ? 'bg-green-600 text-white hover:bg-green-700'
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-              }`}
-            >
-              Submit
-            </button>
+            {/* Navigation Buttons */}
+            <div className="flex justify-between mb-4">
+              <button
+                onClick={() => {
+                  // Clear validation errors when going back to evaluation
+                  setValidationErrors({});
+                  setCurrentProject(projects.length - 1);
+                  setCurrentPage('evaluation');
+                  window.scrollTo(0, 0);
+                }}
+                className="px-4 md:px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700"
+              >
+                Previous Page
+              </button>
+
+              <button
+                onClick={handleSubmit}
+                disabled={!isValidTotal}
+                className={`px-4 md:px-6 py-3 rounded-lg font-medium ${
+                  isValidTotal
+                    ? 'bg-green-600 text-white hover:bg-green-700'
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+              >
+                Submit
+              </button>
+            </div>
+
+            {/* Footer */}
+            <div className="pt-4 border-t border-gray-300">
+              <div className="text-center">
+                <p className="text-gray-500 text-sm">Brockport NY Forward</p>
+              </div>
+            </div>
           </div>
-
-          <Footer />
         </div>
       </div>
     );
