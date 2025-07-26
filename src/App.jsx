@@ -685,7 +685,7 @@ const LPCProjectEvaluationSurvey = () => {
       setConfirmDialog({
         isOpen: true,
         title: 'Confirm Submission',
-        message: `Are you sure you want to submit your survey? Your total NY Forward Request is ${total.toLocaleString()}. This action cannot be undone.`,
+        message: `Are you sure you want to submit your survey?`,
         onConfirm: () => {
           const submissionData = {
             userName,
@@ -734,7 +734,7 @@ const LPCProjectEvaluationSurvey = () => {
         <div className="bg-white border border-gray-300 rounded-lg p-4 md:p-6 mb-6">
           <h2 className="text-lg md:text-xl font-bold mb-4">How We Will Use This Data</h2>
           <p className="mb-4 text-sm md:text-base">
-            The evaluations from all LPC members will be aggregated to create an overall rating for each project, either High, Medium, or Low. At LPC Meeting 5, we will present which projects fell into each of the High Rating, Medium Rating, and Low Rating categories. This will help the LPC make decisions about which projects to keep under consideration for potential funding and which projects could be removed. <em>Note: Your individual responses will remain anonymous. Other LPC members will not be able to see your answers.</em>
+            The evaluations from all LPC members will be aggregated to create an overall rating for each project, either High, Medium, or Low. At LPC Meeting 3, we will present which projects fell into each of the High Rating, Medium Rating, and Low Rating categories. This will help the LPC make decisions about which projects to keep under consideration for potential funding and which projects could be removed. <em>Note: Your individual responses will remain anonymous. Other LPC members will NOT be able to see your answers.</em>
           </p>
         </div>
 
@@ -748,7 +748,7 @@ const LPCProjectEvaluationSurvey = () => {
             placeholder="Enter your name"
           />
           <p className="text-xs md:text-sm text-gray-600 mt-2">
-            <em>This will only be to confirm that we have received responses from all LPC members. Your responses will not be tied to your name.</em>
+            <em>Your name will only be used to confirm that we have received responses from all LPC members. Your responses will NOT be tied to your name.</em>
           </p>
         </div>
 
@@ -1036,10 +1036,7 @@ const LPCProjectEvaluationSurvey = () => {
           <div className="bg-gray-100 rounded-lg p-4 md:p-6 mb-6">
             <h2 className="text-lg font-bold mb-4">Instructions</h2>
             <p className="mb-4 text-sm md:text-base">
-              Based on the evaluation you completed in Step 1, your rating for each project is shown below. The ratings are on a scale of High, Medium, Low. Use your ratings to help you decide which projects to fund.
-            </p>
-            <p className="mb-4 text-sm md:text-base">
-              Use the checkboxes below to decide which projects to fund. As you select projects, the calculator will automatically sum the total NY Forward Request amount. You will only be able to submit your survey if the total NY Forward Request amount is between $6 million to $8 million.
+              Based on the evaluation you completed in Step 1, your rating for each project is shown below. The ratings are on a scale of High, Medium, Low. Use the checkboxes to decide which projects to fund. As you select projects, a calculator at the bottom of your screen will automatically sum the total NY Forward Request amount. You will only be able to submit your survey if the total NY Forward Request amount is between $6 million to $8 million.
             </p>
             <p className="text-xs md:text-sm text-gray-600 italic">
               <em>Remember: This is only an exercise. Your selections in this exercise are not definitive. There will be on-going discussions at the upcoming LPC meetings to narrow down the list of projects.</em>
@@ -1195,7 +1192,7 @@ const LPCProjectEvaluationSurvey = () => {
           <div className="text-green-600 text-6xl mb-4">✓</div>
           <h1 className="text-2xl md:text-3xl font-bold mb-4 text-green-800">Survey Submitted Successfully!</h1>
           <p className="text-gray-600 mb-6 text-sm md:text-base">
-            Thank you for completing the LPC Project Evaluation Survey. Your responses have been recorded and will be used in the upcoming LPC meetings.
+            Thank you for completing the LPC Project Evaluation Survey. Your responses have been recorded.
           </p>
           <p className="text-sm text-gray-500">
             You may now close this window.
