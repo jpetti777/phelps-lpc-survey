@@ -37,7 +37,15 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-// Confirmation Dialog Component
+// Footer Component
+const Footer = () => (
+  <div className="mt-8 pt-6">
+    <hr className="border-gray-300 mb-4" />
+    <div className="text-center">
+      <p className="text-gray-500 text-sm">Brockport NY Forward</p>
+    </div>
+  </div>
+);
 const ConfirmDialog = ({ isOpen, title, message, onConfirm, onCancel, singleButton = false, singleButtonOnly = false, buttonText = null }) => {
   if (!isOpen) return null;
 
@@ -96,7 +104,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will retrofit and expand accessible outdoor seating at the Brockport Welcome Center to enhance waterfront amenities for residents and Erie Canal visitors. The project includes installing durable, inclusive seating with optimal waterfront views, along with site preparation and infrastructure improvements that will transform the Welcome Center into a more welcoming community gathering place.",
       nyForwardRequest: 150000,
       totalCost: 150000,
-      image: "https://via.placeholder.com/400x200/4CAF50/white?text=Welcome+Center"
+      image: "/images/project-1.jpg"
     },
     {
       id: 2,
@@ -105,7 +113,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "The Village will enhance Clinton Street from Main to Utica Street with wider sidewalks, improved lighting, crosswalks, landscaping, and road repaving to create safer pedestrian access connecting downtown, SUNY Brockport, and the Erie Canal waterfront while supporting local businesses.",
       nyForwardRequest: 1000000,
       totalCost: 1000000,
-      image: "https://via.placeholder.com/400x200/2196F3/white?text=Clinton+Street"
+      image: "/images/project-2.jpg"
     },
     {
       id: 3,
@@ -114,7 +122,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will revitalize Main Street's historic commercial district from the Main Street Bridge to Holley Street by replacing aging sidewalks with durable materials, enhancing tree health through improved root systems and canopy care, modernizing LED lighting with event power connections, and adding bike racks to support multimodal transportation while preserving the downtown's historic character and supporting local businesses.",
       nyForwardRequest: 2000000,
       totalCost: 2000000,
-      image: "https://via.placeholder.com/400x200/FF5722/white?text=Main+Street"
+      image: "/images/project-3.jpg"
     },
     {
       id: 4,
@@ -123,7 +131,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "The VIllage will launch a comprehensive marketing and branding initiative to enhance its identity and attract more residents, employers, and visitors by positioning itself as a premier canalfront destination. The project will develop a complete marketing strategy including a new brand identity, targeted messaging for different audiences, and implementation through digital collateral and wayfinding signage.",
       nyForwardRequest: 300000,
       totalCost: 300000,
-      image: "https://via.placeholder.com/400x200/9C27B0/white?text=Branding"
+      image: "/images/project-4.jpg"
     },
     {
       id: 5,
@@ -132,7 +140,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "Rehabilitation of historic church to enhance accessibility for the Brockport Ecumenical Food Shelf and Clothing Center through three key improvements: adding an elevator that matches the sandstone, renovating the basement with updated layout and moisture solutions, and repairing the Main Street facade with accessible steps and ramp while maintaining the red doors and historic character.",
       nyForwardRequest: 500000,
       totalCost: 550000,
-      image: "https://via.placeholder.com/400x200/795548/white?text=St+Lukes"
+      image: "/images/project-5.jpg"
     },
     {
       id: 6,
@@ -141,7 +149,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "BFD will replace 8 overhead bay doors with high-quality aluminum full-view doors featuring tempered low-E insulated glass panels, improved thermal performance, and custom red paint to match department branding, enhancing the downtown streetscape appearance while improving operational efficiency and energy performance as part of broader revitalization efforts.",
       nyForwardRequest: 102250,
       totalCost: 205428,
-      image: "https://via.placeholder.com/400x200/F44336/white?text=Fire+Station"
+      image: "/images/project-6.jpg"
     },
     {
       id: 7,
@@ -150,7 +158,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This mixed-use property houses 3 commercial storefronts and 6 apartments, with this project enhancing its appeal as a canal gateway through comprehensive improvements, including new parking, roofing, siding, windows, central air for storefronts, efficient laundry facilities, and landscaping with canal-side benches to attract canal visitors and support local businesses.",
       nyForwardRequest: 100000,
       totalCost: 200000,
-      image: "https://via.placeholder.com/400x200/607D8B/white?text=2+Main+Street"
+      image: "/images/project-7.jpg"
     },
     {
       id: 8,
@@ -159,7 +167,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will demolish a blighted single-family home and barn to construct four buildings containing 12 modern townhomes (3 bedrooms, 2.5 bathrooms, single-car garage each) to create a vibrant residential community that promotes walkability and supports Brockport's downtown revitalization, with work including final engineering plans, village approvals, demolition, site preparation with new road and sidewalk, and townhome construction.",
       nyForwardRequest: 800000,
       totalCost: 3466011,
-      image: "https://via.placeholder.com/400x200/8BC34A/white?text=Clark+Street"
+      image: "/images/project-8.jpg"
     },
     {
       id: 9,
@@ -168,7 +176,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will enhance accessibility at the Lift Bridge Book Shop to ensure compliance with ADA requirements and improve customer experience for all visitors.",
       nyForwardRequest: 500000,
       totalCost: 550000,
-      image: "https://via.placeholder.com/400x200/FF9800/white?text=Book+Shop"
+      image: "/images/project-9.jpg"
     },
     {
       id: 10,
@@ -177,7 +185,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will restore third floor apartments to provide additional housing options in the downtown area while preserving the historic character of the building.",
       nyForwardRequest: 263392,
       totalCost: 526785,
-      image: "https://via.placeholder.com/400x200/3F51B5/white?text=Main+Apartments"
+      image: "/images/project-10.jpg"
     },
     {
       id: 11,
@@ -186,7 +194,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will develop sustainable mixed-income apartments to provide diverse housing options while supporting downtown revitalization and connecting residential areas to commercial districts.",
       nyForwardRequest: 1500000,
       totalCost: 8484033,
-      image: "https://via.placeholder.com/400x200/009688/white?text=Clinton+Apartments"
+      image: "/images/project-11.jpg"
     },
     {
       id: 12,
@@ -195,7 +203,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will upgrade access and exterior improvements to enhance the building's appearance and functionality while contributing to the overall downtown streetscape.",
       nyForwardRequest: 55275,
       totalCost: 110550,
-      image: "https://via.placeholder.com/400x200/E91E63/white?text=73+Main"
+      image: "/images/project-12.jpg"
     },
     {
       id: 13,
@@ -204,7 +212,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will construct a new mixed-use building on a vacant lot to add commercial space and residential units while filling a gap in the downtown streetscape.",
       nyForwardRequest: 300000,
       totalCost: 600000,
-      image: "https://via.placeholder.com/400x200/673AB7/white?text=173+Main"
+      image: "/images/project-13.jpg"
     },
     {
       id: 14,
@@ -213,7 +221,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will complete the restoration of a historic Victorian hotel to preserve architectural heritage while creating new opportunities for hospitality and tourism in downtown Brockport.",
       nyForwardRequest: 41665,
       totalCost: 83331,
-      image: "https://via.placeholder.com/400x200/FF5722/white?text=Victorian+Hotel"
+      image: "/images/project-14.jpg"
     },
     {
       id: 15,
@@ -222,7 +230,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will restore the Morgan Manning House following fire damage to preserve this important historic structure and return it to productive use in the downtown area.",
       nyForwardRequest: 108968,
       totalCost: 108968,
-      image: "https://via.placeholder.com/400x200/795548/white?text=Morgan+Manning"
+      image: "/images/project-15.jpg"
     },
     {
       id: 16,
@@ -231,7 +239,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will replace the roof at 43 Main Street to preserve the building and ensure continued use while maintaining the historic character of the downtown district.",
       nyForwardRequest: 300000,
       totalCost: 300000,
-      image: "https://via.placeholder.com/400x200/607D8B/white?text=43+Main+Roof"
+      image: "/images/project-16.jpg"
     },
     {
       id: 17,
@@ -240,7 +248,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This project will renovate a residential apartment to improve housing quality and contribute to the overall revitalization of the downtown residential area.",
       nyForwardRequest: 300000,
       totalCost: 300000,
-      image: "https://via.placeholder.com/400x200/4CAF50/white?text=2+Market"
+      image: "/images/project-17.jpg"
     },
     {
       id: 18,
@@ -249,7 +257,7 @@ const LPCProjectEvaluationSurvey = () => {
       description: "This fund will support multiple small projects throughout the NY Forward area to address various community needs and support ongoing revitalization efforts with flexible funding for smaller-scale improvements.",
       nyForwardRequest: 300000,
       totalCost: 300000,
-      image: "https://via.placeholder.com/400x200/9E9E9E/white?text=Grant+Fund"
+      image: "/images/project-18.jpg"
     }
   ];
 
@@ -756,6 +764,8 @@ const LPCProjectEvaluationSurvey = () => {
             Next Page
           </button>
         </div>
+
+        <Footer />
       </div>
     </div>
   );
@@ -985,6 +995,8 @@ const LPCProjectEvaluationSurvey = () => {
             </button>
           </div>
         </div>
+
+        <Footer />
       </div>
     );
   };
