@@ -22,6 +22,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export default async function handler(req, res) {
+  console.log('🚀 API called:', req.method, req.url);
+
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -37,13 +39,20 @@ export default async function handler(req, res) {
   }
 
   if (req.method !== 'POST') {
+    console.log('❌ Method not allowed:', req.method);
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
+    console.log('🔗 Connecting to MongoDB...');
+    console.log('📊 MongoDB URI exists:', !!process.env.MONGODB_URI);
+    console.log('🌍 Environment:', process.env.NODE_ENV);
+
     const client = await clientPromise;
     const db = client.db('lpc-survey');
     const collection = db.collection('responses');
+
+    console.log('✅ Connected to MongoDB successfully');
 
     const {
       userName,
@@ -54,16 +63,37 @@ export default async function handler(req, res) {
       totalRequest
     } = req.body;
 
+    console.log('📥 Received data:', {
+      userName,
+      totalRequest,
+      hasEvaluations: !!evaluations,
+      hasScores: !!scores,
+      hasCategories: !!categories,
+      hasProjectSelections: !!projectSelections,
+      evaluationsCount: evaluations ? Object.keys(evaluations).length : 0,
+      selectionsCount: projectSelections ? Object.keys(projectSelections).length : 0
+    });
+
     // Validate required fields
     if (!userName || !evaluations || !scores || !categories || !projectSelections || totalRequest === undefined) {
+      console.log('❌ Missing required fields');
       return res.status(400).json({
         error: 'Missing required fields',
-        required: ['userName', 'evaluations', 'scores', 'categories', 'projectSelections', 'totalRequest']
+        required: ['userName', 'evaluations', 'scores', 'categories', 'projectSelections', 'totalRequest'],
+        received: {
+          userName: !!userName,
+          evaluations: !!evaluations,
+          scores: !!scores,
+          categories: !!categories,
+          projectSelections: !!projectSelections,
+          totalRequest: totalRequest !== undefined
+        }
       });
     }
 
     // Validate total request range
     if (totalRequest < 6000000 || totalRequest > 8000000) {
+      console.log('❌ Invalid total request amount:', totalRequest);
       return res.status(400).json({
         error: 'Total request must be between $6,000,000 and $8,000,000',
         received: totalRequest
@@ -78,10 +108,22 @@ export default async function handler(req, res) {
       projectSelections,
       totalRequest,
       timestamp: new Date(),
-      submittedAt: new Date().toISOString()
+      submittedAt: new Date().toISOString(),
+      metadata: {
+        userAgent: req.headers['user-agent'],
+        ip: req.headers['x-forwarded-for'] || req.connection?.remoteAddress,
+        submissionId: Math.random().toString(36).substr(2, 9)
+      }
     };
 
+    console.log('💾 Attempting to save to database...');
     const result = await collection.insertOne(surveyResponse);
+    console.log('✅ Saved successfully with ID:', result.insertedId);
+
+    // Verify the document was actually saved
+    const savedDoc = await collection.findOne({ _id: result.insertedId });
+    console.log('🔍 Verification - Document exists:', !!savedDoc);
+    console.log('🔍 Verification - Document userName:', savedDoc?.userName);
 
     console.log(`✅ Survey submitted by: ${userName} at ${new Date().toISOString()}`);
 
@@ -89,14 +131,17 @@ export default async function handler(req, res) {
       success: true,
       message: 'Survey response saved successfully',
       id: result.insertedId,
-      timestamp: surveyResponse.timestamp
+      timestamp: surveyResponse.timestamp,
+      submissionId: surveyResponse.metadata.submissionId
     });
 
   } catch (error) {
     console.error('❌ Error saving survey response:', error);
+    console.error('❌ Error stack:', error.stack);
     res.status(500).json({
       error: 'Internal server error',
-      message: error.message
+      message: error.message,
+      type: error.name
     });
   }
 }

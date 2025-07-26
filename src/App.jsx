@@ -620,11 +620,34 @@ const LPCProjectEvaluationSurvey = () => {
       }, 0);
   };
 
-  // Save data to MongoDB (simulated)
+  // Save data to MongoDB via API
   const saveToDatabase = async (data) => {
     try {
-      // Simulate MongoDB save
-      console.log('Saving to MongoDB:', data);
+      console.log('📤 Attempting to submit survey data:', {
+        userName: data.userName,
+        totalRequest: data.totalRequest,
+        evaluationsCount: Object.keys(data.evaluations).length,
+        selectionsCount: Object.keys(data.projectSelections).length
+      });
+
+      const response = await fetch('/api/survey/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+
+      console.log('📡 API Response status:', response.status);
+
+      const result = await response.json();
+      console.log('📥 API Response data:', result);
+
+      if (!response.ok) {
+        throw new Error(result.error || `HTTP ${response.status}: Failed to submit survey`);
+      }
+
+      console.log('✅ Survey submitted successfully:', result);
       localStorage.removeItem('lpc-survey-backup'); // Clear backup after successful submission
 
       // Show success page
@@ -632,8 +655,19 @@ const LPCProjectEvaluationSurvey = () => {
         setCurrentPage('success');
         window.scrollTo(0, 0);
       }, 1000);
+
     } catch (error) {
-      console.error('Error saving data:', error);
+      console.error('❌ Error saving survey:', error);
+
+      // Show error to user
+      setConfirmDialog({
+        isOpen: true,
+        title: 'Submission Error',
+        message: `Failed to submit survey: ${error.message}. Please try again or contact support.`,
+        onConfirm: () => setConfirmDialog({ isOpen: false }),
+        singleButton: true,
+        buttonText: 'OK'
+      });
     }
   };
 
