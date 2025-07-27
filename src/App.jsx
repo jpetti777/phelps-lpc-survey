@@ -100,90 +100,90 @@ const LPCProjectEvaluationSurvey = () => {
   const projects = [
     {
       id: 1,
-      title: "Create an Accessible Venue at Brockport Welcome Center",
+      title: "Create an Accessible Venue at the Brockport Welcome Center",
       location: "11 Water Street (Brockport Welcome Center)",
-      description: "This project will retrofit and expand accessible outdoor seating at the Brockport Welcome Center to enhance waterfront amenities for residents and Erie Canal visitors. The project includes installing durable, inclusive seating with optimal waterfront views, along with site preparation and infrastructure improvements that will transform the Welcome Center into a more welcoming community gathering place.",
+      description: "This project will retrofit and expand accessible outdoor seating at the Brockport Welcome Center to enhance waterfront amenities for residents and Erie Canal visitors. The project includes installing durable, inclusive seating with waterfront views, along with site preparation and infrastructure improvements that will transform the Welcome Center into a more inviting community gathering place.",
       nyForwardRequest: 150000,
       totalCost: 150000,
       image: "/images/project-1.jpg"
     },
     {
       id: 2,
-      title: "Enhance Clinton Street Streetscape",
+      title: "Enhance the Clinton Street Streetscape",
       location: "Clinton Street from Main Street to Utica Street",
-      description: "The Village will enhance Clinton Street from Main to Utica Street with wider sidewalks, improved lighting, crosswalks, landscaping, and road repaving to create safer pedestrian access connecting downtown, SUNY Brockport, and the Erie Canal waterfront while supporting local businesses.",
+      description: "This project will enhance Clinton Street from Main Street to Utica Street with wider sidewalks, improved lighting, crosswalks, landscaping, and road repaving to create safer pedestrian access connecting downtown, SUNY Brockport, and the Erie Canal waterfront while supporting local businesses.",
       nyForwardRequest: 1000000,
       totalCost: 1000000,
       image: "/images/project-2.jpg"
     },
     {
       id: 3,
-      title: "Enhance Main Street Streetscape",
+      title: "Enhance the Main Street Streetscape",
       location: "Main Street from the Main Street Bridge to Holley Street",
-      description: "This project will revitalize Main Street's historic commercial district from the Main Street Bridge to Holley Street by replacing aging sidewalks with durable materials, enhancing tree health through improved root systems and canopy care, modernizing LED lighting with event power connections, and adding bike racks to support multimodal transportation while preserving the downtown's historic character and supporting local businesses.",
+      description: "This project will revitalize Main Street's historic commercial district from the Main Street Bridge to Holley Street by replacing sidewalks, protecting street trees, modernizing LED lighting with power connections for events, and adding bike racks to preserve and enhance downtown's historic character and support local businesses.",
       nyForwardRequest: 2000000,
       totalCost: 2000000,
       image: "/images/project-3.jpg"
     },
     {
       id: 4,
-      title: "Branding and Marketing Strategy",
+      title: "Develop a Downtown Branding and Marketing Strategy",
       location: "Downtown Brockport",
-      description: "The VIllage will launch a comprehensive marketing and branding initiative to enhance its identity and attract more residents, employers, and visitors by positioning itself as a premier canalfront destination. The project will develop a complete marketing strategy including a new brand identity, targeted messaging for different audiences, and implementation through digital collateral and wayfinding signage.",
+      description: "This project will develop a comprehensive marketing and branding initiative to strengthen the village's identity as a premier canalfront destination and attract more residents, employers, and visitors. The project will include the creation of a new brand identity, targeted messaging for different audiences, and implementation through both digital collateral and wayfinding signage.",
       nyForwardRequest: 300000,
       totalCost: 300000,
       image: "/images/project-4.jpg"
     },
     {
       id: 5,
-      title: "Enhance Accessibility and Façade of St. Luke's",
+      title: "Enhance Accessibility at St. Luke's Episcopal Church",
       location: "14 State Street",
-      description: "Rehabilitation of historic church to enhance accessibility for the Brockport Ecumenical Food Shelf and Clothing Center through three key improvements: adding an elevator that matches the sandstone, renovating the basement with updated layout and moisture solutions, and repairing the Main Street facade with accessible steps and ramp while maintaining the red doors and historic character.",
+      description: "This project will rehabilitate the historic St. Luke's Episcopal Church to enhance accessibility to the Brockport Ecumenical Food Shelf and Clothing Center through three key improvements: installing an elevator, repairing the Main Street entry stairs and ramp to ensure ADA accessibility, and renovating the basement with updated layout and moisture-proofing solutions.",
       nyForwardRequest: 500000,
       totalCost: 550000,
       image: "/images/project-5.jpg"
     },
     {
       id: 6,
-      title: "Modernize Brockport Fire Station Door Infrastructure",
+      title: "Modernize Brockport Fire Station",
       location: "38 Market Street",
-      description: "BFD will replace 8 overhead bay doors with high-quality aluminum full-view doors featuring tempered low-E insulated glass panels, improved thermal performance, and custom red paint to match department branding, enhancing the downtown streetscape appearance while improving operational efficiency and energy performance as part of broader revitalization efforts.",
+      description: "This project will replace eight overhead bay doors with high-quality aluminum full-view doors for improved thermal performance and custom red paint to match department branding, enhancing the downtown streetscape appearance while improving operational efficiency and energy performance as part of broader revitalization efforts.",
       nyForwardRequest: 102250,
       totalCost: 205428,
       image: "/images/project-6.jpg"
     },
     {
       id: 7,
-      title: "Enhance 2 Main Street Mixed-Use Property and Canal Gateway",
+      title: "Enhance 2 Main Street as a Canal Gateway",
       location: "2 Main Street",
-      description: "This mixed-use property houses 3 commercial storefronts and 6 apartments, with this project enhancing its appeal as a canal gateway through comprehensive improvements, including new parking, roofing, siding, windows, central air for storefronts, efficient laundry facilities, and landscaping with canal-side benches to attract canal visitors and support local businesses.",
+      description: "This project will enhance the mixed-use property at 2 Main Street to strengthen its appeal as a gateway to the canal. The project will make comprehensive improvements to the property's three commercial storefronts and six apartments, including new parking, roofing, siding, windows, central air for storefronts, energy-efficient laundry facilities, and landscaping with canal-side benches to attract canal visitors and support local businesses.",
       nyForwardRequest: 100000,
       totalCost: 200000,
       image: "/images/project-7.jpg"
     },
     {
       id: 8,
-      title: "Revitalize Blighted Property through Townhome Development",
+      title: "Revitalize Blighted Property at 41 Clark Street with New Townhomes",
       location: "41 Clark Street",
-      description: "This project will demolish a blighted single-family home and barn to construct four buildings containing 12 modern townhomes (3 bedrooms, 2.5 bathrooms, single-car garage each) to create a vibrant residential community that promotes walkability and supports Brockport's downtown revitalization, with work including final engineering plans, village approvals, demolition, site preparation with new road and sidewalk, and townhome construction.",
+      description: "This project will demolish a blighted single-family home and barn to construct four buildings with 12 townhomes, each with 3 bedrooms, 2.5 bathrooms, and a single-car garage. Project work will include final engineering plans, village approvals, demolition, site preparation with new road and sidewalk, and townhome construction. Note: This project is located outside the NY Forward Area.",
       nyForwardRequest: 800000,
       totalCost: 3466011,
       image: "/images/project-8.jpg"
     },
     {
       id: 9,
-      title: "Improve Accessibility of Lift Bridge Book Shop",
+      title: "Improve Accessibility at the Lift Bridge Book Shop",
       location: "45 Main Street",
-      description: "This project will enhance accessibility at the Lift Bridge Book Shop to ensure compliance with ADA requirements and improve customer experience for all visitors.",
+      description: " This project will enhance accessibility at the Lift Bridge Book Shop by modifying the front entrance to meet ADA requirements, installing interior ramp access to the lower level, and constructing a fully accessible bathroom, in addition to replacing deteriorating facades, windows, and exterior walls to address water leaks, mold issues, and energy inefficiency.",
       nyForwardRequest: 500000,
       totalCost: 550000,
       image: "/images/project-9.jpg"
     },
     {
       id: 10,
-      title: "Restore 46-50 S. Main Street Third Floor Apartments",
+      title: "Restore Upper Floor Apartments and Facade at 46-50 Main Street",
       location: "46-50 Main Street",
-      description: "This project will restore third floor apartments to provide additional housing options in the downtown area while preserving the historic character of the building.",
+      description: "This project will restore and renovate three vacant third-floor apartment units at 46-50 Main Street, increasing total residential units at the building from two to five. The apartments will be targeted at graduate students and young professionals. The project will also enhance the facade by replacing the building's 1970s vinyl siding with historically appropriate brickwork.",
       nyForwardRequest: 263392,
       totalCost: 526785,
       image: "/images/project-10.jpg"
@@ -192,16 +192,16 @@ const LPCProjectEvaluationSurvey = () => {
       id: 11,
       title: "Develop Sustainable Mixed-Income Apartments at 60-90 Clinton Street",
       location: "60-90 Clinton Street",
-      description: "This project will develop sustainable mixed-income apartments to provide diverse housing options while supporting downtown revitalization and connecting residential areas to commercial districts.",
+      description: "This project will transform the vacant lot at 60-90 Clinton Street into a new 25,000-square foot apartment building featuring a mix of 25 one- and two-bedroom units with sustainable high-efficiency electric heating and cooling systems and fully electric appliances. The project will provide high-quality, mixed income housing options, serving households earning up to 80% of Area Median Income (AMI).",
       nyForwardRequest: 1500000,
       totalCost: 8484033,
       image: "/images/project-11.jpg"
     },
     {
       id: 12,
-      title: "Upgrade 73 Main Access and Exterior",
+      title: "Upgrade 73 Main Street Exterior Facade and Accessibility",
       location: "73 Main Street",
-      description: "This project will upgrade access and exterior improvements to enhance the building's appearance and functionality while contributing to the overall downtown streetscape.",
+      description: "This project will upgrade the mixed-use building at 73 Main Street to improve the exterior facade that is visible from the public parking lot, install energy-efficient windows, replace the steep stairway, and install  a stair lift for improved accessibility.",
       nyForwardRequest: 55275,
       totalCost: 110550,
       image: "/images/project-12.jpg"
@@ -210,16 +210,16 @@ const LPCProjectEvaluationSurvey = () => {
       id: 13,
       title: "Construct New Mixed-Use Building on Vacant Main Street Lot",
       location: "173 Main Street",
-      description: "This project will construct a new mixed-use building on a vacant lot to add commercial space and residential units while filling a gap in the downtown streetscape.",
+      description: "This project will construct a new 3,000-square foot mixed-use building on a vacant lot (formerly destroyed by fire in 2008) featuring 1,500 square feet of Main Street-facing retail space and three one-bedroom apartments that will provide new commercial and residential opportunities downtown. Note: This project is located outside the NY Forward Area.",
       nyForwardRequest: 300000,
       totalCost: 600000,
       image: "/images/project-13.jpg"
     },
     {
       id: 14,
-      title: "Complete Historic Victorian Hotel Restoration at 205 Park Avenue",
+      title: "Complete Historic Bed and Breakfast Restoration at 205 Park Avenue",
       location: "205 Park Avenue",
-      description: "This project will complete the restoration of a historic Victorian hotel to preserve architectural heritage while creating new opportunities for hospitality and tourism in downtown Brockport.",
+      description: "This project will complete the renovation and restoration of a historic Victorian hotel which has been transformed into a bed and breakfast. The project will add one guest room and bathroom, restore the historical front porch, install a back deck with accessibility ramp, finish walkways and flooring, replace the end-of-life roof, and install second-floor air ducting. This project will be the last phase of a larger renovation project, which has already invested more than $200,000 in historical restoration work and infrastructure. Note: This project is located outside the NY Forward Area.",
       nyForwardRequest: 41665,
       totalCost: 83331,
       image: "/images/project-14.jpg"
@@ -228,7 +228,7 @@ const LPCProjectEvaluationSurvey = () => {
       id: 15,
       title: "Restore the Morgan Manning House Post-Fire",
       location: "151 Main Street",
-      description: "This project will restore the Morgan Manning House following fire damage to preserve this important historic structure and return it to productive use in the downtown area.",
+      description: "This project will restore the Morgan-Manning House, addressing areas affected by the January 2025 fire, including refinishing flooring and installing custom cabinetry in the Victorian-style kitchen. The project will also enhance accessibility to the museum with a new ADA ramp connection from the back parking area, restructured restrooms, and a widened driveway. Enhanced security systems will also be installed.",
       nyForwardRequest: 108968,
       totalCost: 108968,
       image: "/images/project-15.jpg"
@@ -237,27 +237,27 @@ const LPCProjectEvaluationSurvey = () => {
       id: 16,
       title: "Replace Roof at 43 Main Street",
       location: "43 Main Street",
-      description: "This project will replace the roof at 43 Main Street to preserve the building and ensure continued use while maintaining the historic character of the downtown district.",
+      description: "This project will replace the roof and decorative architectural overhangs at the historic 43 Main Street mixed-use building.",
       nyForwardRequest: 300000,
       totalCost: 300000,
       image: "/images/project-16.jpg"
     },
     {
       id: 17,
-      title: "Renovate Residential Apartment at 2 Market Street",
+      title: "Renovate 2 Market Street Apartment",
       location: "2 Market Street",
-      description: "This project will renovate a residential apartment to improve housing quality and contribute to the overall revitalization of the downtown residential area.",
+      description: "This project will completely renovate a 600-square foot apartment unit at 2 Market Street with new ceilings, floors, windows, HVAC, plumbing, and structural improvements.",
       nyForwardRequest: 300000,
       totalCost: 300000,
       image: "/images/project-17.jpg"
     },
     {
       id: 18,
-      title: "Small Project Grant Fund",
+      title: "Establish a Small Project Grant Fund",
       location: "NY Forward Area",
-      description: "This fund will support multiple small projects throughout the NY Forward area to address various community needs and support ongoing revitalization efforts with flexible funding for smaller-scale improvements.",
+      description: "The Small Project Grant Fund will provide financial assistance to property and business owners for building improvements, facades, renovations, signage, equipment, and public art installations to strengthen Brockport's historic character and support downtown businesses, covering up to 75% of project costs with recipients providing a 25% match.",
       nyForwardRequest: 300000,
-      totalCost: 300000,
+      totalCost: 390000,
       image: "/images/project-18.jpg"
     }
   ];
@@ -276,10 +276,10 @@ const LPCProjectEvaluationSurvey = () => {
   // Evaluation criteria
   const brockportStrategies = [
     "This project leverages our identity as a canal community and the pilot Empire State Trail Town.",
-    "This project improves accessibility, walkability and multimodal access, positioning Brockport as the premier inclusive waterfront community along the Erie Canal.",
+    "This project improves accessibility, walkability, and multimodal access, positioning Brockport as the premier inclusive waterfront community along the Erie Canal.",
     "This project supports the development of diverse, affordable, and accessible housing options on Main Street and near the Erie Canal.",
     "This project reinforces Brockport's unique sense of place and Victorian character, creating an inviting downtown where people can connect and feel at home.",
-    "This project does not align with any of the above strategies."
+    "This project does NOT align with any of the above strategies."
   ];
 
   const stateGoals = [
@@ -288,9 +288,9 @@ const LPCProjectEvaluationSurvey = () => {
     "This project attracts new businesses that create a robust mix of shopping, entertainment, and service options for residents and visitors, and that provide job opportunities for a variety of skills and salaries.",
     "This project enhances public spaces for arts and cultural events that serve the existing members of the community but also draw in visitors from around the region.",
     "This project builds a diverse population, with residents and workers supported by complementary varied housing and employment opportunities.",
-    "This project reduces greenhouse gas emissions and support investments that are more resilient to future climate change impacts.",
+    "This project reduces greenhouse gas emissions and supports investments that are more resilient to future climate change impacts.",
     "This project grows the local property tax base.",
-    "This project does not align with any of the above goals."
+    "This project does NOT align with any of the above goals."
   ];
 
   // API warming function
@@ -463,11 +463,11 @@ const LPCProjectEvaluationSurvey = () => {
     if (!eval_ || eval_.recused) return {};
 
     if (eval_.brockportStrategies.length === 0) {
-      errors.brockportStrategies = "Please select at least one strategy alignment option";
+      errors.brockportStrategies = "Please select at least one of the following options";
     }
 
     if (eval_.stateGoals.length === 0) {
-      errors.stateGoals = "Please select at least one state goal alignment option";
+      errors.stateGoals = "Please select at least one of the following options";
     }
 
     const requiredDropdowns = [
@@ -484,7 +484,7 @@ const LPCProjectEvaluationSurvey = () => {
     });
 
     const requiredPriorities = [
-      { key: 'enhancesAccessibility', label: 'Enhances Accessibility' },
+      { key: 'enhancesAccessibility', label: 'Enhances ADA Accessibility' },
       { key: 'createsHousing', label: 'Creates Housing Options' },
       { key: 'providesCommunityBenefits', label: 'Provides Community Benefits' }
     ];
@@ -611,7 +611,7 @@ const LPCProjectEvaluationSurvey = () => {
       setConfirmDialog({
         isOpen: true,
         title: 'Incomplete Evaluation',
-        message: 'Please evaluate all criteria before proceeding.',
+        message: 'Please evaluate all the criteria before proceeding.',
         onConfirm: () => setConfirmDialog({ isOpen: false }),
         singleButtonOnly: true,
         buttonText: 'Return to Evaluation'
@@ -760,14 +760,14 @@ const LPCProjectEvaluationSurvey = () => {
           <div className="space-y-4 mb-6 text-sm md:text-base">
             <p><strong>Step 1:</strong> You will evaluate each project based on how well it aligns with the evaluation criteria established by the State and the LPC, using a scale of High, Medium, Low. Your answers will be aggregated and used to sort each project into three categories: High Rating projects that you scored the highest, Medium Rating projects that you scored moderately-well, and Low Rating projects that you scored the lowest.</p>
 
-            <p><strong>Step 2:</strong> You will go through the exercise of deciding which projects you want to fund. As you select projects, a calculator will automatically sum the total NY Forward Request amount. You will only be able to submit your survey if the total NY Forward Request amount is between $6 million to $8 million. <em>Note: This is only an exercise. Your selections in this exercise are not definitive. There will be on-going discussions at the upcoming LPC meetings to narrow down the list of projects.</em></p>
+            <p><strong>Step 2:</strong> You will choose which projects you want to "fund" for the purposes of this exercise. As you select projects, a calculator will automatically sum the total NY Forward Request amount. You will only be able to submit your survey if the total NY Forward Request amount is between $6 million to $8 million. <em>Note: This is only an exercise. Your selections in this exercise are not definitive. There will be on-going discussions at the upcoming LPC meetings to narrow down the list of projects.</em></p>
           </div>
         </div>
 
         <div className="bg-white border border-gray-300 rounded-lg p-4 md:p-6 mb-6">
           <h2 className="text-lg md:text-xl font-bold mb-4">How We Will Use This Data</h2>
           <p className="mb-4 text-sm md:text-base">
-            The evaluations from all LPC members will be aggregated to create an overall rating for each project, either High, Medium, or Low. At LPC Meeting 3, we will present which projects fell into each of the High Rating, Medium Rating, and Low Rating categories. This will help the LPC make decisions about which projects to keep under consideration for potential funding and which projects could be removed. <em>Note: Your individual responses will remain anonymous. Other LPC members will NOT be able to see your answers.</em>
+            The evaluations from all LPC members will be combined to create an overall rating for each project, either High, Medium, or Low. At the next LPC meeting, we will present which projects fell into each of the categories. This will help the LPC make decisions about which projects to keep under consideration for potential funding and which projects could be removed. <em>Note: Your individual responses will remain anonymous. Other LPC members will NOT be able to see your answers.</em>
           </p>
         </div>
 
@@ -869,7 +869,7 @@ const LPCProjectEvaluationSurvey = () => {
               {/* Brockport Strategies */}
               <div className="border border-gray-300 rounded-lg p-4">
                 <h3 className="text-lg font-semibold mb-2">Alignment with Brockport's Revitalization Strategies</h3>
-                <p className="text-sm text-gray-600 mb-4">This project aligns with the following strategies for the Village of Brockport's revitalization:</p>
+                <p className="text-sm text-gray-600 mb-4">This project aligns with the following strategies for the Village of Brockport's revitalization (select all that apply):</p>
                 {validationErrors.brockportStrategies && (
                   <p className="text-red-600 text-sm mb-3">{validationErrors.brockportStrategies}</p>
                 )}
@@ -908,7 +908,7 @@ const LPCProjectEvaluationSurvey = () => {
               {/* State Goals */}
               <div className="border border-gray-300 rounded-lg p-4">
                 <h3 className="text-lg font-semibold mb-2">Alignment with State Goals for the NY Forward Program</h3>
-                <p className="text-sm text-gray-600 mb-4">This project aligns with the following statewide goals for the NY Forward program:</p>
+                <p className="text-sm text-gray-600 mb-4">This project aligns with the following statewide goals for the NY Forward program (select all that apply):</p>
                 {validationErrors.stateGoals && (
                   <p className="text-red-600 text-sm mb-3">{validationErrors.stateGoals}</p>
                 )}
@@ -930,10 +930,10 @@ const LPCProjectEvaluationSurvey = () => {
 
               {/* Dropdown criteria */}
               {[
-                { key: 'levelOfImpact', label: 'Level of Impact', desc: 'This project will have a significant positive impact on downtown Brockport and could spur additional investment.' },
-                { key: 'projectReadiness', label: 'Project Readiness', desc: 'This project is well-developed and can be ready to break ground in a timely manner.' },
-                { key: 'costEffectiveness', label: 'Cost-Effectiveness', desc: 'This project is a good use of public funds and the budget is reasonable.' },
-                { key: 'benefitsToComm', label: 'Benefits to the Community', desc: 'This project will result in benefits to the broader community, beyond just the project sponsor.' }
+                { key: 'levelOfImpact', label: 'Level of Impact', desc: 'This project will have a significant positive impact on downtown Brockport and could spur additional investment. (Rate on a scale of High, Medium, Low.)' },
+                { key: 'projectReadiness', label: 'Project Readiness', desc: 'This project is well-developed and can be ready to break ground in a timely manner. (Rate on a scale of High, Medium, Low.)' },
+                { key: 'costEffectiveness', label: 'Cost-Effectiveness', desc: 'This project is a good use of public funds and the budget is reasonable. (Rate on a scale of High, Medium, Low.)' },
+                { key: 'benefitsToComm', label: 'Benefits to the Community', desc: 'This project will result in benefits to the broader community, beyond just the project sponsor. (Rate on a scale of High, Medium, Low.)' }
               ].map(criteria => (
                 <div key={criteria.key} className="border border-gray-300 rounded-lg p-4">
                   <h3 className="text-lg font-semibold mb-2">{criteria.label}</h3>
@@ -981,7 +981,7 @@ const LPCProjectEvaluationSurvey = () => {
                             onChange={(e) => handleDropdownChange(project.id, criteria.key, e.target.value)}
                             className="w-4 h-4"
                           />
-                          <span className="text-sm">Yes, this project achieves this criteria.</span>
+                          <span className="text-sm"><strong>Yes,</strong> this project achieves this criteria.</span>
                         </label>
                         <label className="flex items-center space-x-3">
                           <input
@@ -992,7 +992,7 @@ const LPCProjectEvaluationSurvey = () => {
                             onChange={(e) => handleDropdownChange(project.id, criteria.key, e.target.value)}
                             className="w-4 h-4"
                           />
-                          <span className="text-sm">No, this project <strong>does not</strong> achieve this criteria.</span>
+                          <span className="text-sm"><strong>No,</strong> this project does not achieve this criteria.</span>
                         </label>
                       </div>
                     </div>
@@ -1069,10 +1069,10 @@ const LPCProjectEvaluationSurvey = () => {
           <div className="bg-gray-100 rounded-lg p-4 md:p-6 mb-6">
             <h2 className="text-lg font-bold mb-4">Instructions</h2>
             <p className="mb-4 text-sm md:text-base">
-              Based on the evaluation you completed in Step 1, your rating for each project is shown below. The ratings are on a scale of High, Medium, Low. Use the checkboxes to decide which projects to fund. As you select projects, a calculator at the bottom of your screen will automatically sum the total NY Forward Request amount. You will only be able to submit your survey if the total NY Forward Request amount is between $6 million to $8 million.
+              Based on the evaluation you completed in Step 1, your overall rating for each project is shown below. The ratings are on a scale of High, Medium, Low. Use the "Fund this Project" checkboxes to select which projects you wish to fund. As you select projects, a calculator at the bottom of your screen will automatically sum the Total NY Forward Request amount. You will only be able to submit your survey if the Total NY Forward Request amount is between $6 million to $8 million.
             </p>
             <p className="text-xs md:text-sm text-gray-600 italic">
-              <em>Remember: This is only an exercise. Your selections in this exercise are not definitive. There will be on-going discussions at the upcoming LPC meetings to narrow down the list of projects.</em>
+              <em>Remember: This is only an exercise. Your selections in this survey are not definitive. There will be on-going discussions at the upcoming LPC meetings to narrow down the list of projects.</em>
             </p>
           </div>
         </div>
