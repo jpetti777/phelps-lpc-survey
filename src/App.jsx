@@ -47,7 +47,7 @@ const Footer = () => (
   </div>
 );
 
-const ConfirmDialog = ({ isOpen, title, message, onConfirm, onCancel, singleButton = false, singleButtonOnly = false, buttonText = null }) => {
+const ConfirmDialog = ({ isOpen, title, message, onConfirm, onCancel, singleButton = false, singleButtonOnly = false, buttonText = null, isSubmissionConfirm = false }) => {
   if (!isOpen) return null;
 
   return (
@@ -83,7 +83,11 @@ const ConfirmDialog = ({ isOpen, title, message, onConfirm, onCancel, singleButt
               </button>
               <button
                 onClick={onConfirm}
-                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                className={`px-4 py-2 rounded-lg ${
+                  isSubmissionConfirm 
+                    ? 'bg-blue-600 text-white hover:bg-blue-700'
+                    : 'bg-red-600 text-white hover:bg-red-700'
+                }`}
               >
                 {buttonText || 'Confirm'}
               </button>
@@ -732,7 +736,8 @@ const LPCProjectEvaluationSurvey = () => {
           saveToDatabase(submissionData);
           setConfirmDialog({ isOpen: false });
         },
-        onCancel: () => setConfirmDialog({ isOpen: false })
+        onCancel: () => setConfirmDialog({ isOpen: false }),
+        isSubmissionConfirm: true
       });
     }
   };
