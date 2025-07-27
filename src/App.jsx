@@ -1253,6 +1253,7 @@ const LPCProjectEvaluationSurvey = () => {
           singleButton={confirmDialog.singleButton}
           singleButtonOnly={confirmDialog.singleButtonOnly}
           buttonText={confirmDialog.buttonText}
+          isSubmissionConfirm={confirmDialog.isSubmissionConfirm}
         />
 
         {currentPage === 'welcome' && renderWelcomePage()}
