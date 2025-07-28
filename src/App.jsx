@@ -134,8 +134,8 @@ const LPCProjectEvaluationSurvey = () => {
       title: "Develop a Downtown Branding and Marketing Strategy",
       location: "Downtown Brockport",
       description: "This project will develop a comprehensive marketing and branding initiative to strengthen the village's identity as a premier canalfront destination and attract more residents, employers, and visitors. The project will include the creation of a new brand identity, targeted messaging for different audiences, and implementation through both digital collateral and wayfinding signage.",
-      nyForwardRequest: 300000,
-      totalCost: 300000,
+      nyForwardRequest: 200000,
+      totalCost: 200000,
       image: "/images/project-4.jpg"
     },
     {
