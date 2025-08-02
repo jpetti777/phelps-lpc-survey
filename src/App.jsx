@@ -104,166 +104,162 @@ const LPCProjectEvaluationSurvey = () => {
   const projects = [
     {
       id: 1,
-      title: "Create an Accessible Venue at the Brockport Welcome Center",
-      location: "11 Water Street (Brockport Welcome Center)",
-      description: "This project will retrofit and expand accessible outdoor seating at the Brockport Welcome Center to enhance waterfront amenities for residents and Erie Canal visitors. The project includes installing durable, inclusive seating with waterfront views, along with site preparation and infrastructure improvements that will transform the Welcome Center into a more inviting community gathering place.",
-      nyForwardRequest: 150000,
-      totalCost: 150000,
+      title: "Main Street Streetscape",
+      location: "Main Street, from Ontario Street to Wayne Street",
+      description: "This project will enhance and beautify Main Street with new amenities, including benches, planter boxes, hanging planters, and trash/recycling receptacles. The project will also take steps to improve pedestrian and vehicular safety through enhanced crosswalk treatments and the installation of a landscaped median from Exchange Street to the Ontario Telephone Company driveway. ",
+      nyForwardRequest: 500000,
+      totalCost: 500000,
       image: "/images/project-1.jpg"
     },
     {
       id: 2,
-      title: "Enhance the Clinton Street Streetscape",
-      location: "Clinton Street from Main Street to Utica Street",
-      description: "This project will enhance Clinton Street from Main Street to Utica Street with wider sidewalks, improved lighting, crosswalks, landscaping, and road repaving to create safer pedestrian access connecting downtown, SUNY Brockport, and the Erie Canal waterfront while supporting local businesses.",
-      nyForwardRequest: 1000000,
-      totalCost: 1000000,
+      title: "Exchange Street Festival Street and Parking Lot Enhancements",
+      location: "Exchange Street and Exchange Street Parking Lot",
+      description: "This project will enhance Exchange Street with new amenities that will make it more pedestrian-friendly and easier to temporarily close the street for festivals and events. These amenities will include string lights, benches, and a unique pavement treatment. This project will also enhance the Exchange Street parking lot with new landscaped islands. In addition, the Harvest Host area in the parking lot will be formalized with amenities including RV electrical hookups, benches, trash receptacles, and a unique pavement treatment.",
+      nyForwardRequest: 1630000,
+      totalCost: 1630000,
       image: "/images/project-2.jpg"
     },
     {
       id: 3,
-      title: "Enhance the Main Street Streetscape",
-      location: "Main Street from the Main Street Bridge to Holley Street",
-      description: "This project will revitalize Main Street's historic commercial district from the Main Street Bridge to Holley Street by replacing sidewalks, protecting street trees, modernizing LED lighting with power connections for events, and adding bike racks to preserve and enhance downtown's historic character and support local businesses.",
-      nyForwardRequest: 2000000,
-      totalCost: 2000000,
+      title: "Church Street Improvements",
+      location: "Church Street, from Main Street to parking lot entry",
+      description: "This project will enhance Church Street with new amenities that will make it more pedestrian-friendly and easier to temporarily close the street for festivals and events. These amenities will include string lights, benches, and a unique pavement treatment.",
+      nyForwardRequest: 900000,
+      totalCost: 900000,
       image: "/images/project-3.jpg"
     },
     {
       id: 4,
-      title: "Develop a Downtown Branding and Marketing Strategy",
-      location: "Downtown Brockport",
-      description: "This project will develop a comprehensive marketing and branding initiative to strengthen the village's identity as a premier canalfront destination and attract more residents, employers, and visitors. The project will include the creation of a new brand identity, targeted messaging for different audiences, and implementation through both digital collateral and wayfinding signage.",
-      nyForwardRequest: 200000,
-      totalCost: 200000,
-      image: "/images/project-4.jpg"
+      title: "Crooked Bridge Park Improvements",
+      location: "Crooked Bridge Park",
+      description: "This project will activate Crooked Bridge Park with the addition of terraced seating on the slope, a kayak pull-out on Flint Creek, and an ADA-accessible pathway to the creek (Phase 1 improvements). Phase 2 of this project will construct a large pavilion at the park, with a stage, seating, and outdoor kitchen space included.",
+      nyForwardRequest: 400000, // Default to Option A
+      totalCost: 400000,
+      image: "/images/project-4.jpg",
+      hasOptions: true,
+      options: {
+        A: {
+          name: "Option A (Phase 1)",
+          nyForwardRequest: 400000,
+          totalCost: 400000
+        },
+        B: {
+          name: "Option B (Phases 1 + 2)",
+          nyForwardRequest: 1600000,
+          totalCost: 1600000
+        }
+      }
     },
     {
       id: 5,
-      title: "Enhance Accessibility at St. Luke's Episcopal Church",
-      location: "14 State Street",
-      description: "This project will rehabilitate the historic St. Luke's Episcopal Church to enhance accessibility to the Brockport Ecumenical Food Shelf and Clothing Center through three key improvements: installing an elevator, repairing the Main Street entry stairs and ramp to ensure ADA accessibility, and renovating the basement with updated layout and moisture-proofing solutions.",
-      nyForwardRequest: 500000,
-      totalCost: 550000,
+      title: "Wayfinding and Downtown Branding",
+      location: "NY Forward Area",
+      description: "This project will install a system of directional, informational, and interpretive signage at key locations and destinations to guide visitors throughout downtown Phelps. This project will also develop a new brand and marketing strategy to attract residents, visitors, and businesses to downtown Phelps.",
+      nyForwardRequest: 300000,
+      totalCost: 300000,
       image: "/images/project-5.jpg"
     },
     {
       id: 6,
-      title: "Modernize Brockport Fire Station",
-      location: "38 Market Street",
-      description: "This project will replace eight overhead bay doors with high-quality aluminum full-view doors for improved thermal performance and custom red paint to match department branding, enhancing the downtown streetscape appearance while improving operational efficiency and energy performance as part of broader revitalization efforts.",
-      nyForwardRequest: 102250,
-      totalCost: 205428,
+      title: "Small Project Grant Fund",
+      location: "NY Forward Area",
+      description: "This project will create a matching grant fund for small projects in the NY Forward Area, such as facade improvements, renovations to commercial and mixed-use buildings, and business assistance. Grant recipients will need to provide a minimum 25% match.",
+      nyForwardRequest: 600000,
+      totalCost: 780000,
       image: "/images/project-6.jpg"
     },
     {
       id: 7,
-      title: "Enhance 2 Main Street as a Canal Gateway",
-      location: "2 Main Street",
-      description: "This project will enhance the mixed-use property at 2 Main Street to strengthen its appeal as a gateway to the canal. The project will make comprehensive improvements to the property's three commercial storefronts and six apartments, including new parking, roofing, siding, windows, central air for storefronts, energy-efficient laundry facilities, and landscaping with canal-side benches to attract canal visitors and support local businesses.",
-      nyForwardRequest: 100000,
-      totalCost: 200000,
+      title: "Town Hall Outdoor Space Improvements",
+      location: "79 Main Street",
+      description: "This project will enhance the greenspace on the east-side of Town Hall with seating, landscaping, and a walkway connecting Main Street to the rear parking lot. The greenspace will feature a flagpole, the bell from the firehouse, and a commemorative plaque. In addition, this project will enhance the comfort and safety of the alleyway on the west-side of Town Hall with string lights, an improved pavement treatment, and other amenities. The improved alley will also feature a gateway arch similar to the alley next to Melt.",
+      nyForwardRequest: 250000,
+      totalCost: 250000,
       image: "/images/project-7.jpg"
     },
     {
       id: 8,
-      title: "Revitalize Blighted Property at 41 Clark Street with New Townhomes",
-      location: "41 Clark Street",
-      description: "This project will demolish a blighted single-family home and barn to construct four buildings with 12 townhomes, each with 3 bedrooms, 2.5 bathrooms, and a single-car garage. Project work will include final engineering plans, village approvals, demolition, site preparation with new road and sidewalk, and townhome construction. Note: This project is located outside the NY Forward Area.",
-      nyForwardRequest: 800000,
-      totalCost: 3466011,
+      title: "Library Storywalk",
+      location: "Phelps Library",
+      description: "This project will create a storywalk trail around the outdoor area at the Phelps Community Center that will support walking and strollers. Other improvements include upgrades to the rear entry of the Library, a small reading garden, and an accessible parking lot for the fitness area.",
+      nyForwardRequest: 1000000,
+      totalCost: 1000000,
       image: "/images/project-8.jpg"
     },
     {
       id: 9,
-      title: "Improve Accessibility at the Lift Bridge Book Shop",
-      location: "45 Main Street",
-      description: " This project will enhance accessibility at the Lift Bridge Book Shop by modifying the front entrance to meet ADA requirements, installing interior ramp access to the lower level, and constructing a fully accessible bathroom, in addition to replacing deteriorating facades, windows, and exterior walls to address water leaks, mold issues, and energy inefficiency.",
-      nyForwardRequest: 500000,
-      totalCost: 550000,
+      title: "Community Center Multi-Purpose Space",
+      location: "8 Banta Street",
+      description: "This project will reconfigure the existing Phelps Community Center cafeteria and kitchen to create a multi-purpose space, with a stage area, outdoor plaza, and teaching kitchen.",
+      nyForwardRequest: 1500000,
+      totalCost: 1500000,
       image: "/images/project-9.jpg"
     },
     {
       id: 10,
-      title: "Restore Upper Floor Apartments and Facade at 46-50 Main Street",
-      location: "46-50 Main Street",
-      description: "This project will restore and renovate three vacant third-floor apartment units at 46-50 Main Street, increasing total residential units at the building from two to five. The apartments will be targeted at graduate students and young professionals. The project will also enhance the facade by replacing the building's 1970s vinyl siding with historically appropriate brickwork.",
-      nyForwardRequest: 263392,
-      totalCost: 526785,
+      title: "Memorial Park Improvements",
+      location: "Memorial Park",
+      description: "This project will create accessible access to Memorial Park by extending the existing sidewalk from the Flint Creek bridge to the west entry of the memorial. Additional enhancements will include landscaping, lighting, and joint re-pointing.",
+      nyForwardRequest: 100000,
+      totalCost: 100000,
       image: "/images/project-10.jpg"
     },
     {
       id: 11,
-      title: "Develop Sustainable Mixed-Income Apartments at 60-90 Clinton Street",
-      location: "60-90 Clinton Street",
-      description: "This project will transform the vacant lot at 60-90 Clinton Street into a new 25,000-square foot apartment building featuring a mix of 25 one- and two-bedroom units with sustainable high-efficiency electric heating and cooling systems and fully electric appliances. The project will provide high-quality, mixed income housing options, serving households earning up to 80% of Area Median Income (AMI).",
+      title: "Phelps Hotel Revitalization",
+      location: "90 Main Street",
+      description: "This project will reactive the historic Phelps Hotel as a downtown anchor with unique commercial and residential options. NY Forward funding will be used to completely restore the first floor, including reviving the restaurant, bar, and banquet center, and will also lay the groundwork for development of the second and third floors into eight short- and long-term housing units.",
       nyForwardRequest: 1500000,
-      totalCost: 8484033,
+      totalCost: 3000000,
       image: "/images/project-11.jpg"
     },
     {
       id: 12,
-      title: "Upgrade 73 Main Street Exterior Facade and Accessibility",
-      location: "73 Main Street",
-      description: "This project will upgrade the mixed-use building at 73 Main Street to improve the exterior facade that is visible from the public parking lot, install energy-efficient windows, replace the steep stairway, and install  a stair lift for improved accessibility.",
-      nyForwardRequest: 55275,
-      totalCost: 110550,
+      title: "92-98 Main Street Improvements",
+      location: "92-98 Main Street",
+      description: "This project will transform the former laundromat at 92-98 Main Street into a rentable commercial space. The project will also upgrade the three apartments and four other commercial spaces in the building. All units will be equipped with new HVAC and electrical systems, the commercial units will get new doors, and foundation work will be completed in the basement.",
+      nyForwardRequest: 250000,
+      totalCost: 300000,
       image: "/images/project-12.jpg"
     },
     {
       id: 13,
-      title: "Construct New Mixed-Use Building on Vacant Main Street Lot",
-      location: "173 Main Street",
-      description: "This project will construct a new 3,000-square foot mixed-use building on a vacant lot (formerly destroyed by fire in 2008) featuring 1,500 square feet of Main Street-facing retail space and three one-bedroom apartments that will provide new commercial and residential opportunities downtown. Note: This project is located outside the NY Forward Area.",
-      nyForwardRequest: 300000,
-      totalCost: 600000,
+      title: "2-10 Flint Street Improvements",
+      location: "2-10 Flint Street",
+      description: "This project will take necessary steps to make the upper floors of the building at 2-10 Flint Street into usable commercial space. Project work will include structural improvements, roof repairs, interior and exterior carpentry work, and exterior paint.",
+      nyForwardRequest: 70000,
+      totalCost: 180000,
       image: "/images/project-13.jpg"
     },
     {
       id: 14,
-      title: "Complete Historic Bed and Breakfast Restoration at 205 Park Avenue",
-      location: "205 Park Avenue",
-      description: "This project will complete the renovation and restoration of a historic Victorian hotel which has been transformed into a bed and breakfast. The project will add one guest room and bathroom, restore the historical front porch, install a back deck with accessibility ramp, finish walkways and flooring, replace the end-of-life roof, and install second-floor air ducting. This project will be the last phase of a larger renovation project, which has already invested more than $200,000 in historical restoration work and infrastructure. Note: This project is located outside the NY Forward Area.",
-      nyForwardRequest: 41665,
-      totalCost: 83331,
+      title: "Melt on Main Enhancements",
+      location: "114 Main Street",
+      description: "This project will enhance the Melt on Main ice cream shop with new bay windows overlooking Main Street, an updated front entry that is ADA accessible, awnings on both the front and back of the building, and new entry doors. Plumbing and electrical systems will also be installed in the alley along the side of the building to expand event and programming opportunities in this space. In addition, a new hood/insulation/fire suppression system will be installed in the ice cream shop. ",
+      nyForwardRequest: 75000,
+      totalCost: 93000,
       image: "/images/project-14.jpg"
     },
     {
       id: 15,
-      title: "Restore the Morgan Manning House Post-Fire",
-      location: "151 Main Street",
-      description: "This project will restore the Morgan-Manning House, addressing areas affected by the January 2025 fire, including refinishing flooring and installing custom cabinetry in the Victorian-style kitchen. The project will also enhance accessibility to the museum with a new ADA ramp connection from the back parking area, restructured restrooms, and a widened driveway. Enhanced security systems will also be installed.",
-      nyForwardRequest: 108968,
-      totalCost: 108968,
+      title: "114 Main Street Improvements",
+      location: "114 Main Street",
+      description: "This project will update the 114 Main Street building to allow for the currently vacant third floor to be renovated into a studio apartment. Project work will install new electrical systems, water supply, and an exhaust fan on the third floor, as well as a fire escape and roof access. The facade of the building will also be improved with new paint, brick restoration, and a restored mural. Other building improvements will include renovation of the elevator shaft, roof seam flashing and reinforcement, and installation of a separate water main to the building.",
+      nyForwardRequest: 75000,
+      totalCost: 113000,
       image: "/images/project-15.jpg"
     },
     {
       id: 16,
-      title: "Replace Roof at 43 Main Street",
-      location: "43 Main Street",
-      description: "This project will replace the roof and decorative architectural overhangs at the historic 43 Main Street mixed-use building.",
-      nyForwardRequest: 300000,
-      totalCost: 300000,
+      title: "Smokin' Tails Enhancements",
+      location: "3 Church Street",
+      description: "This project will enhance the Holler Event Space at Smokin' Tails Distillery with new amenities, including a two-story rooftop patio, full rooftop bar, fire brick oven, and refrigeration and storage space. The front facade of the building will also be restored to its historic appearance, with new paint, an awning, brick work, and business signage. Project work will also include the addition of a mural on the west side of the building and new door and window installation on the front and back of the building.",
+      nyForwardRequest: 150000,
+      totalCost: 150000,
       image: "/images/project-16.jpg"
     },
-    {
-      id: 17,
-      title: "Renovate 2 Market Street Apartment",
-      location: "2 Market Street",
-      description: "This project will completely renovate a 600-square foot apartment unit at 2 Market Street with new ceilings, floors, windows, HVAC, plumbing, and structural improvements.",
-      nyForwardRequest: 300000,
-      totalCost: 300000,
-      image: "/images/project-17.jpg"
-    },
-    {
-      id: 18,
-      title: "Establish a Small Project Grant Fund",
-      location: "NY Forward Area",
-      description: "The Small Project Grant Fund will provide financial assistance to property and business owners for building improvements, facades, renovations, signage, equipment, and public art installations to strengthen Brockport's historic character and support downtown businesses, covering up to 75% of project costs with recipients providing a 25% match.",
-      nyForwardRequest: 300000,
-      totalCost: 390000,
-      image: "/images/project-18.jpg"
-    }
+
   ];
 
   // State management
@@ -272,17 +268,17 @@ const LPCProjectEvaluationSurvey = () => {
   const [currentProject, setCurrentProject] = useState(0);
   const [evaluations, setEvaluations] = useState({});
   const [projectSelections, setProjectSelections] = useState({});
+  const [projectOptions, setProjectOptions] = useState({}); // For tracking option selections (A or B)
   const [scores, setScores] = useState({});
   const [categories, setCategories] = useState({});
   const [confirmDialog, setConfirmDialog] = useState({ isOpen: false });
   const [validationErrors, setValidationErrors] = useState({});
 
-  // Evaluation criteria
-  const brockportStrategies = [
-    "This project leverages our identity as a canal community and the pilot Empire State Trail Town.",
-    "This project improves accessibility, walkability, and multimodal access, positioning Brockport as the premier inclusive waterfront community along the Erie Canal.",
-    "This project supports the development of diverse, affordable, and accessible housing options on Main Street and near the Erie Canal.",
-    "This project reinforces Brockport's unique sense of place and Victorian character, creating an inviting downtown where people can connect and feel at home.",
+  // Evaluation criteria - UPDATED: Renamed to phelpsStrategies and removed one strategy
+  const phelpsStrategies = [
+    "This project celebrates and strengthens Phelps' downtown character and small-town charm.",
+    "This project grows downtown Phelps as a tourist destination.",
+    "This project enhances community spaces, parks, and the public realm.",
     "This project does NOT align with any of the above strategies."
   ];
 
@@ -311,34 +307,34 @@ const LPCProjectEvaluationSurvey = () => {
     }
   }, []);
 
-  // Calculate score for a project
+  // Calculate score for a project - UPDATED: Updated phelpsStrategies scoring
   const calculateScore = useCallback((projectId) => {
     const eval_ = evaluations[projectId];
     if (!eval_ || eval_.recused) return 0;
 
     let score = 0;
 
-    // Brockport Strategies (0-3 points)
-    if (eval_.brockportStrategies.includes(4)) {
+    // Phelps Strategies (0-3 points) - UPDATED scoring logic
+    if (eval_.phelpsStrategies?.includes(3)) { // Index 3 is "does not align"
       score += 0;
     } else {
-      const selectedStrategies = eval_.brockportStrategies.filter(idx => idx !== 4).length;
+      const selectedStrategies = eval_.phelpsStrategies?.filter(idx => idx !== 3).length || 0;
       if (selectedStrategies >= 3) score += 3;
       else if (selectedStrategies === 2) score += 2;
       else if (selectedStrategies === 1) score += 1;
     }
 
     // State Goals (0-3 points)
-    if (eval_.stateGoals.includes(7)) {
+    if (eval_.stateGoals?.includes(7)) {
       score += 0;
     } else {
-      const selectedGoals = eval_.stateGoals.filter(idx => idx !== 7).length;
+      const selectedGoals = eval_.stateGoals?.filter(idx => idx !== 7).length || 0;
       if (selectedGoals >= 5) score += 3;
       else if (selectedGoals >= 3) score += 2;
       else if (selectedGoals >= 1) score += 1;
     }
 
-    // Drop-down criteria (1-3 points each)
+    // Drop-down criteria (1-3 points each) - only these 4 criteria now
     const dropdownCriteria = ['levelOfImpact', 'projectReadiness', 'costEffectiveness', 'benefitsToComm'];
     dropdownCriteria.forEach(criteria => {
       if (eval_[criteria] === 'High') score += 3;
@@ -346,24 +342,17 @@ const LPCProjectEvaluationSurvey = () => {
       else if (eval_[criteria] === 'Low') score += 1;
     });
 
-    // Priority criteria (1 or 3 points each)
-    const priorityCriteria = ['enhancesAccessibility', 'createsHousing', 'providesCommunityBenefits'];
-    priorityCriteria.forEach(criteria => {
-      if (eval_[criteria] === 'Yes') score += 3;
-      else if (eval_[criteria] === 'No') score += 1;
-    });
-
     return score;
   }, [evaluations]);
 
-  // Categorize project based on score
+  // Categorize project based on score (UPDATED ranges)
   const categorizeProject = useCallback((score) => {
-    if (score >= 22) return 'High';
-    if (score >= 16) return 'Medium';
-    return 'Low';
+    if (score >= 15) return 'High';    // 15-18
+    if (score >= 11) return 'Medium';  // 11-14
+    return 'Low';                      // 4-10
   }, []);
 
-  // Initialize evaluations and load from backup
+  // Initialize evaluations and load from backup - UPDATED: Use phelpsStrategies
   useEffect(() => {
     // Try to load from localStorage backup
     const backup = localStorage.getItem('lpc-survey-backup');
@@ -371,27 +360,39 @@ const LPCProjectEvaluationSurvey = () => {
       try {
         const parsed = JSON.parse(backup);
         setUserName(parsed.userName || '');
-        setEvaluations(parsed.evaluations || {});
+
+        // Migrate old brockportStrategies to phelpsStrategies if needed
+        const migratedEvaluations = {};
+        Object.keys(parsed.evaluations || {}).forEach(projectId => {
+          const eval_ = parsed.evaluations[projectId];
+          migratedEvaluations[projectId] = {
+            ...eval_,
+            phelpsStrategies: eval_.phelpsStrategies || eval_.brockportStrategies || [],
+            // Remove old brockportStrategies if it exists
+            brockportStrategies: undefined
+          };
+          delete migratedEvaluations[projectId].brockportStrategies;
+        });
+
+        setEvaluations(migratedEvaluations);
         // Don't restore project selections from backup to ensure clean start
         setProjectSelections({});
+        setProjectOptions({});
       } catch (error) {
         console.error('Error loading backup:', error);
       }
     }
 
-    // Initialize evaluations if not loaded from backup
+    // Initialize evaluations if not loaded from backup - UPDATED: Use phelpsStrategies
     const initialEvaluations = {};
     projects.forEach(project => {
       initialEvaluations[project.id] = {
-        brockportStrategies: [],
+        phelpsStrategies: [],
         stateGoals: [],
         levelOfImpact: '',
         projectReadiness: '',
         costEffectiveness: '',
         benefitsToComm: '',
-        enhancesAccessibility: '',
-        createsHousing: '',
-        providesCommunityBenefits: '',
         recused: false
       };
     });
@@ -410,11 +411,12 @@ const LPCProjectEvaluationSurvey = () => {
         evaluations,
         // Only save project selections if we're on step 2
         projectSelections: currentPage === 'step2-selection' ? projectSelections : {},
+        projectOptions: currentPage === 'step2-selection' ? projectOptions : {},
         timestamp: new Date().toISOString()
       };
       localStorage.setItem('lpc-survey-backup', JSON.stringify(backup));
     }
-  }, [userName, evaluations, projectSelections, currentPage]);
+  }, [userName, evaluations, projectSelections, projectOptions, currentPage]);
 
   // Clear validation errors whenever the current project changes
   useEffect(() => {
@@ -458,7 +460,7 @@ const LPCProjectEvaluationSurvey = () => {
     }
   }, [currentPage, warmUpAPI]);
 
-  // Validate current project evaluation
+  // Validate current project evaluation - UPDATED: Use phelpsStrategies
   const validateCurrentProject = () => {
     const project = projects[currentProject];
     const eval_ = evaluations[project.id];
@@ -466,11 +468,11 @@ const LPCProjectEvaluationSurvey = () => {
 
     if (!eval_ || eval_.recused) return {};
 
-    if (eval_.brockportStrategies.length === 0) {
-      errors.brockportStrategies = "Please select at least one of the following options";
+    if (!eval_.phelpsStrategies || eval_.phelpsStrategies.length === 0) {
+      errors.phelpsStrategies = "Please select at least one of the following options";
     }
 
-    if (eval_.stateGoals.length === 0) {
+    if (!eval_.stateGoals || eval_.stateGoals.length === 0) {
       errors.stateGoals = "Please select at least one of the following options";
     }
 
@@ -487,18 +489,6 @@ const LPCProjectEvaluationSurvey = () => {
       }
     });
 
-    const requiredPriorities = [
-      { key: 'enhancesAccessibility', label: 'Enhances ADA Accessibility' },
-      { key: 'createsHousing', label: 'Creates Housing Options' },
-      { key: 'providesCommunityBenefits', label: 'Provides Community Benefits' }
-    ];
-
-    requiredPriorities.forEach(({ key, label }) => {
-      if (!eval_[key]) {
-        errors[key] = `Please select Yes or No for ${label}`;
-      }
-    });
-
     return errors;
   };
 
@@ -508,20 +498,20 @@ const LPCProjectEvaluationSurvey = () => {
     return Object.keys(errors).length === 0;
   };
 
-  // Handle alignment changes with validation
+  // Handle alignment changes with validation - UPDATED: Use phelpsStrategies
   const handleAlignmentChange = (projectId, section, index, checked) => {
     setEvaluations(prev => {
       const newEval = { ...prev };
       const projectEval = { ...newEval[projectId] };
 
-      if (section === 'brockportStrategies') {
-        if (index === 4) { // "does not align" option
-          projectEval.brockportStrategies = checked ? [4] : [];
+      if (section === 'phelpsStrategies') {
+        if (index === 3) { // "does not align" option (now index 3 instead of 4)
+          projectEval.phelpsStrategies = checked ? [3] : [];
         } else {
           if (checked) {
-            projectEval.brockportStrategies = [...projectEval.brockportStrategies.filter(i => i !== 4), index];
+            projectEval.phelpsStrategies = [...(projectEval.phelpsStrategies || []).filter(i => i !== 3), index];
           } else {
-            projectEval.brockportStrategies = projectEval.brockportStrategies.filter(i => i !== index);
+            projectEval.phelpsStrategies = (projectEval.phelpsStrategies || []).filter(i => i !== index);
           }
         }
       } else if (section === 'stateGoals') {
@@ -529,9 +519,9 @@ const LPCProjectEvaluationSurvey = () => {
           projectEval.stateGoals = checked ? [7] : [];
         } else {
           if (checked) {
-            projectEval.stateGoals = [...projectEval.stateGoals.filter(i => i !== 7), index];
+            projectEval.stateGoals = [...(projectEval.stateGoals || []).filter(i => i !== 7), index];
           } else {
-            projectEval.stateGoals = projectEval.stateGoals.filter(i => i !== index);
+            projectEval.stateGoals = (projectEval.stateGoals || []).filter(i => i !== index);
           }
         }
       }
@@ -656,7 +646,15 @@ const LPCProjectEvaluationSurvey = () => {
       })
       .reduce((total, projectId) => {
         const project = projects.find(p => p.id === parseInt(projectId));
-        return total + (project ? project.nyForwardRequest : 0);
+        if (!project) return total;
+
+        // Check if this project has options and get the selected option
+        if (project.hasOptions && projectOptions[projectId]) {
+          const selectedOption = projectOptions[projectId];
+          return total + project.options[selectedOption].nyForwardRequest;
+        }
+
+        return total + project.nyForwardRequest;
       }, 0);
   };
 
@@ -731,6 +729,7 @@ const LPCProjectEvaluationSurvey = () => {
             scores,
             categories,
             projectSelections,
+            projectOptions,
             totalRequest: total
           };
           saveToDatabase(submissionData);
@@ -839,12 +838,31 @@ const LPCProjectEvaluationSurvey = () => {
 
             <p className="mb-4 text-sm md:text-base">{project.description}</p>
 
-            <p className="font-semibold text-sm md:text-base">
-              NY Forward Request: ${project.nyForwardRequest.toLocaleString()} ({percentage}% of total cost)
-            </p>
-            <p className="font-semibold text-sm md:text-base">
-              Total Project Cost: ${project.totalCost.toLocaleString()}
-            </p>
+            {project.hasOptions ? (
+              <div className="space-y-2">
+                <p className="font-semibold text-sm md:text-base">
+                  {project.options.A.name} NY Forward Request: ${project.options.A.nyForwardRequest.toLocaleString()}
+                </p>
+                <p className="font-semibold text-sm md:text-base">
+                  {project.options.A.name} Total Cost: ${project.options.A.totalCost.toLocaleString()}
+                </p>
+                <p className="font-semibold text-sm md:text-base mt-4">
+                  {project.options.B.name} NY Forward Request: ${project.options.B.nyForwardRequest.toLocaleString()}
+                </p>
+                <p className="font-semibold text-sm md:text-base">
+                  {project.options.B.name} Total Cost: ${project.options.B.totalCost.toLocaleString()}
+                </p>
+              </div>
+            ) : (
+              <div>
+                <p className="font-semibold text-sm md:text-base">
+                  NY Forward Request: ${project.nyForwardRequest.toLocaleString()} ({percentage}% of total cost)
+                </p>
+                <p className="font-semibold text-sm md:text-base">
+                  Total Project Cost: ${project.totalCost.toLocaleString()}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Recusal checkbox */}
@@ -871,21 +889,21 @@ const LPCProjectEvaluationSurvey = () => {
 
           {!eval_.recused && (
             <div className="space-y-6 md:space-y-8">
-              {/* Brockport Strategies */}
+              {/* Phelps Strategies - UPDATED */}
               <div className="border border-gray-300 rounded-lg p-4">
-                <h3 className="text-lg font-semibold mb-2">Alignment with Brockport's Revitalization Strategies</h3>
-                <p className="text-sm text-gray-600 mb-4">This project aligns with the following strategies for the Village of Brockport's revitalization (select all that apply):</p>
-                {validationErrors.brockportStrategies && (
-                  <p className="text-red-600 text-sm mb-3">{validationErrors.brockportStrategies}</p>
+                <h3 className="text-lg font-semibold mb-2">Alignment with Phelps' Revitalization Strategies</h3>
+                <p className="text-sm text-gray-600 mb-4">This project aligns with the following strategies for the Village of Phelps' revitalization (select all that apply):</p>
+                {validationErrors.phelpsStrategies && (
+                  <p className="text-red-600 text-sm mb-3">{validationErrors.phelpsStrategies}</p>
                 )}
                 <div className="space-y-3">
-                  {brockportStrategies.map((strategy, index) => (
+                  {phelpsStrategies.map((strategy, index) => (
                     <div key={index} className="flex space-x-3 items-start">
                       <input
                         type="checkbox"
-                        checked={eval_.brockportStrategies?.includes(index) || false}
-                        onChange={(e) => handleAlignmentChange(project.id, 'brockportStrategies', index, e.target.checked)}
-                        disabled={index !== 4 && eval_.brockportStrategies?.includes(4)}
+                        checked={eval_.phelpsStrategies?.includes(index) || false}
+                        onChange={(e) => handleAlignmentChange(project.id, 'phelpsStrategies', index, e.target.checked)}
+                        disabled={index !== 3 && eval_.phelpsStrategies?.includes(3)}
                         className="mt-1"
                         style={{ 
                           width: '16px', 
@@ -935,7 +953,7 @@ const LPCProjectEvaluationSurvey = () => {
 
               {/* Dropdown criteria */}
               {[
-                { key: 'levelOfImpact', label: 'Level of Impact', desc: 'This project will have a significant positive impact on downtown Brockport and could spur additional investment. (Rate on a scale of High, Medium, Low.)' },
+                { key: 'levelOfImpact', label: 'Level of Impact', desc: 'This project will have a significant positive impact on downtown Phelps and could spur additional investment. (Rate on a scale of High, Medium, Low.)' },
                 { key: 'projectReadiness', label: 'Project Readiness', desc: 'This project is well-developed and can be ready to break ground in a timely manner. (Rate on a scale of High, Medium, Low.)' },
                 { key: 'costEffectiveness', label: 'Cost-Effectiveness', desc: 'This project is a good use of public funds and the budget is reasonable. (Rate on a scale of High, Medium, Low.)' },
                 { key: 'benefitsToComm', label: 'Benefits to the Community', desc: 'This project will result in benefits to the broader community, beyond just the project sponsor. (Rate on a scale of High, Medium, Low.)' }
@@ -958,52 +976,6 @@ const LPCProjectEvaluationSurvey = () => {
                   </select>
                 </div>
               ))}
-
-              {/* Priority criteria - all in one box */}
-              <div className="border border-gray-300 rounded-lg p-4">
-                <h3 className="text-lg font-semibold mb-2">Priority Scoring</h3>
-                <p className="text-sm text-gray-600 mb-4">Projects that align with the following criteria will receive additional priority points.</p>
-
-                <div className="space-y-6">
-                  {[
-                    { key: 'enhancesAccessibility', label: 'ADA Accessibility', desc: 'This project enhances ADA accessibility to downtown businesses, buildings, or public spaces.' },
-                    { key: 'createsHousing', label: 'Housing Options', desc: 'This project creates quality and/or diverse housing options in the village.' },
-                    { key: 'providesCommunityBenefits', label: 'Community Benefits', desc: 'This project provides services or benefits to the broader Brockport community.' }
-                  ].map(criteria => (
-                    <div key={criteria.key}>
-                      <h4 className="text-base font-medium mb-2">{criteria.label}</h4>
-                      <p className="text-sm text-gray-600 mb-3">{criteria.desc}</p>
-                      {validationErrors[criteria.key] && (
-                        <p className="text-red-600 text-sm mb-3">{validationErrors[criteria.key]}</p>
-                      )}
-                      <div className="space-y-2">
-                        <label className="flex items-center space-x-3">
-                          <input
-                            type="radio"
-                            name={`${project.id}-${criteria.key}`}
-                            value="Yes"
-                            checked={eval_[criteria.key] === 'Yes'}
-                            onChange={(e) => handleDropdownChange(project.id, criteria.key, e.target.value)}
-                            className="w-4 h-4"
-                          />
-                          <span className="text-sm"><strong>Yes,</strong> this project achieves this criteria.</span>
-                        </label>
-                        <label className="flex items-center space-x-3">
-                          <input
-                            type="radio"
-                            name={`${project.id}-${criteria.key}`}
-                            value="No"
-                            checked={eval_[criteria.key] === 'No'}
-                            onChange={(e) => handleDropdownChange(project.id, criteria.key, e.target.value)}
-                            className="w-4 h-4"
-                          />
-                          <span className="text-sm"><strong>No,</strong> this project does not achieve this criteria.</span>
-                        </label>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           )}
 
@@ -1133,33 +1105,122 @@ const LPCProjectEvaluationSurvey = () => {
 
                     {/* NY Forward Request */}
                     <div className="mb-4">
-                      <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
-                        NY Forward Request: <span className={`font-bold text-lg ${isRecused ? 'text-gray-400' : 'text-black'}`}>
-                          ${project.nyForwardRequest.toLocaleString()}
-                        </span>
-                      </p>
+                      {project.hasOptions ? (
+                        <div className="space-y-2">
+                          <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
+                            {project.options.A.name}: <span className={`font-bold text-base ${isRecused ? 'text-gray-400' : 'text-black'}`}>
+                              ${project.options.A.nyForwardRequest.toLocaleString()}
+                            </span>
+                          </p>
+                          <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
+                            {project.options.B.name}: <span className={`font-bold text-base ${isRecused ? 'text-gray-400' : 'text-black'}`}>
+                              ${project.options.B.nyForwardRequest.toLocaleString()}
+                            </span>
+                          </p>
+                        </div>
+                      ) : (
+                        <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
+                          NY Forward Request: <span className={`font-bold text-lg ${isRecused ? 'text-gray-400' : 'text-black'}`}>
+                            ${project.nyForwardRequest.toLocaleString()}
+                          </span>
+                        </p>
+                      )}
                     </div>
 
-                    {/* Fund this Project checkbox - highlighted */}
+                    {/* Fund this Project options */}
                     {!isRecused && (
-                      <div className="bg-blue-100 border-2 border-blue-300 rounded-lg p-3 inline-block">
-                        <label className="flex items-center space-x-3 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={projectSelections[project.id] || false}
-                            onChange={(e) => {
-                              // Double-check that project is not recused before allowing selection
-                              if (!evaluations[project.id]?.recused) {
-                                setProjectSelections(prev => ({
-                                  ...prev,
-                                  [project.id]: e.target.checked
-                                }));
-                              }
-                            }}
-                            className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
-                          />
-                          <span className="font-bold text-blue-800 text-sm md:text-base">Fund this Project</span>
-                        </label>
+                      <div className="bg-blue-100 border-2 border-blue-300 rounded-lg p-3">
+                        {project.hasOptions ? (
+                          <div className="space-y-3">
+                            <p className="font-bold text-blue-800 text-sm md:text-base mb-2">Fund this Project:</p>
+                            <label className="flex items-center space-x-3 cursor-pointer">
+                              <input
+                                type="radio"
+                                name={`project-${project.id}-option`}
+                                checked={projectSelections[project.id] && projectOptions[project.id] === 'A'}
+                                onChange={(e) => {
+                                  if (e.target.checked) {
+                                    setProjectSelections(prev => ({
+                                      ...prev,
+                                      [project.id]: true
+                                    }));
+                                    setProjectOptions(prev => ({
+                                      ...prev,
+                                      [project.id]: 'A'
+                                    }));
+                                  }
+                                }}
+                                className="w-4 h-4 text-blue-600"
+                              />
+                              <span className="text-blue-800 text-sm md:text-base">
+                                {project.options.A.name} - ${project.options.A.nyForwardRequest.toLocaleString()}
+                              </span>
+                            </label>
+                            <label className="flex items-center space-x-3 cursor-pointer">
+                              <input
+                                type="radio"
+                                name={`project-${project.id}-option`}
+                                checked={projectSelections[project.id] && projectOptions[project.id] === 'B'}
+                                onChange={(e) => {
+                                  if (e.target.checked) {
+                                    setProjectSelections(prev => ({
+                                      ...prev,
+                                      [project.id]: true
+                                    }));
+                                    setProjectOptions(prev => ({
+                                      ...prev,
+                                      [project.id]: 'B'
+                                    }));
+                                  }
+                                }}
+                                className="w-4 h-4 text-blue-600"
+                              />
+                              <span className="text-blue-800 text-sm md:text-base">
+                                {project.options.B.name} - ${project.options.B.nyForwardRequest.toLocaleString()}
+                              </span>
+                            </label>
+                            <label className="flex items-center space-x-3 cursor-pointer">
+                              <input
+                                type="radio"
+                                name={`project-${project.id}-option`}
+                                checked={!projectSelections[project.id]}
+                                onChange={(e) => {
+                                  if (e.target.checked) {
+                                    setProjectSelections(prev => ({
+                                      ...prev,
+                                      [project.id]: false
+                                    }));
+                                    setProjectOptions(prev => {
+                                      const newOptions = { ...prev };
+                                      delete newOptions[project.id];
+                                      return newOptions;
+                                    });
+                                  }
+                                }}
+                                className="w-4 h-4 text-blue-600"
+                              />
+                              <span className="text-blue-800 text-sm md:text-base">Do not fund this project</span>
+                            </label>
+                          </div>
+                        ) : (
+                          <label className="flex items-center space-x-3 cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={projectSelections[project.id] || false}
+                              onChange={(e) => {
+                                // Double-check that project is not recused before allowing selection
+                                if (!evaluations[project.id]?.recused) {
+                                  setProjectSelections(prev => ({
+                                    ...prev,
+                                    [project.id]: e.target.checked
+                                  }));
+                                }
+                              }}
+                              className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
+                            />
+                            <span className="font-bold text-blue-800 text-sm md:text-base">Fund this Project</span>
+                          </label>
+                        )}
                       </div>
                     )}
                   </div>
