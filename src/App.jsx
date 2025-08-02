@@ -1106,18 +1106,8 @@ const LPCProjectEvaluationSurvey = () => {
                     {/* NY Forward Request */}
                     <div className="mb-4">
                       {project.hasOptions ? (
-                        <div className="space-y-2">
-                          <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
-                            {project.options.A.name}: <span className={`font-bold text-base ${isRecused ? 'text-gray-400' : 'text-black'}`}>
-                              ${project.options.A.nyForwardRequest.toLocaleString()}
-                            </span>
-                          </p>
-                          <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
-                            {project.options.B.name}: <span className={`font-bold text-base ${isRecused ? 'text-gray-400' : 'text-black'}`}>
-                              ${project.options.B.nyForwardRequest.toLocaleString()}
-                            </span>
-                          </p>
-                        </div>
+                        // For projects with options, don't show the option details here
+                        <div></div>
                       ) : (
                         <p className={`font-semibold text-sm ${isRecused ? 'text-gray-400' : ''}`}>
                           NY Forward Request: <span className={`font-bold text-lg ${isRecused ? 'text-gray-400' : 'text-black'}`}>
@@ -1129,97 +1119,98 @@ const LPCProjectEvaluationSurvey = () => {
 
                     {/* Fund this Project options */}
                     {!isRecused && (
-                      <div className="bg-blue-100 border-2 border-blue-300 rounded-lg p-3">
+                      <div>
                         {project.hasOptions ? (
                           <div className="space-y-3">
-                            <p className="font-bold text-blue-800 text-sm md:text-base mb-2">Fund this Project:</p>
-                            <label className="flex items-center space-x-3 cursor-pointer">
-                              <input
-                                type="radio"
-                                name={`project-${project.id}-option`}
-                                checked={projectSelections[project.id] && projectOptions[project.id] === 'A'}
-                                onChange={(e) => {
-                                  if (e.target.checked) {
-                                    setProjectSelections(prev => ({
-                                      ...prev,
-                                      [project.id]: true
-                                    }));
-                                    setProjectOptions(prev => ({
-                                      ...prev,
-                                      [project.id]: 'A'
-                                    }));
-                                  }
-                                }}
-                                className="w-4 h-4 text-blue-600"
-                              />
-                              <span className="text-blue-800 text-sm md:text-base">
-                                {project.options.A.name} - ${project.options.A.nyForwardRequest.toLocaleString()}
-                              </span>
-                            </label>
-                            <label className="flex items-center space-x-3 cursor-pointer">
-                              <input
-                                type="radio"
-                                name={`project-${project.id}-option`}
-                                checked={projectSelections[project.id] && projectOptions[project.id] === 'B'}
-                                onChange={(e) => {
-                                  if (e.target.checked) {
-                                    setProjectSelections(prev => ({
-                                      ...prev,
-                                      [project.id]: true
-                                    }));
-                                    setProjectOptions(prev => ({
-                                      ...prev,
-                                      [project.id]: 'B'
-                                    }));
-                                  }
-                                }}
-                                className="w-4 h-4 text-blue-600"
-                              />
-                              <span className="text-blue-800 text-sm md:text-base">
-                                {project.options.B.name} - ${project.options.B.nyForwardRequest.toLocaleString()}
-                              </span>
-                            </label>
-                            <label className="flex items-center space-x-3 cursor-pointer">
-                              <input
-                                type="radio"
-                                name={`project-${project.id}-option`}
-                                checked={!projectSelections[project.id]}
-                                onChange={(e) => {
-                                  if (e.target.checked) {
-                                    setProjectSelections(prev => ({
-                                      ...prev,
-                                      [project.id]: false
-                                    }));
-                                    setProjectOptions(prev => {
-                                      const newOptions = { ...prev };
-                                      delete newOptions[project.id];
-                                      return newOptions;
-                                    });
-                                  }
-                                }}
-                                className="w-4 h-4 text-blue-600"
-                              />
-                              <span className="text-blue-800 text-sm md:text-base">Do not fund this project</span>
-                            </label>
+                            <div className="bg-blue-100 border-2 border-blue-300 rounded-lg p-3 inline-block">
+                              <label className="flex items-center space-x-3 cursor-pointer">
+                                <input
+                                  type="checkbox"
+                                  checked={projectSelections[project.id] && projectOptions[project.id] === 'A'}
+                                  onChange={(e) => {
+                                    if (e.target.checked) {
+                                      setProjectSelections(prev => ({
+                                        ...prev,
+                                        [project.id]: true
+                                      }));
+                                      setProjectOptions(prev => ({
+                                        ...prev,
+                                        [project.id]: 'A'
+                                      }));
+                                    } else {
+                                      setProjectSelections(prev => ({
+                                        ...prev,
+                                        [project.id]: false
+                                      }));
+                                      setProjectOptions(prev => {
+                                        const newOptions = { ...prev };
+                                        delete newOptions[project.id];
+                                        return newOptions;
+                                      });
+                                    }
+                                  }}
+                                  className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
+                                />
+                                <span className="font-bold text-blue-800 text-sm md:text-base">
+                                  Fund {project.options.A.name} - ${project.options.A.nyForwardRequest.toLocaleString()}
+                                </span>
+                              </label>
+                            </div>
+                            <div className="bg-blue-100 border-2 border-blue-300 rounded-lg p-3 inline-block">
+                              <label className="flex items-center space-x-3 cursor-pointer">
+                                <input
+                                  type="checkbox"
+                                  checked={projectSelections[project.id] && projectOptions[project.id] === 'B'}
+                                  onChange={(e) => {
+                                    if (e.target.checked) {
+                                      setProjectSelections(prev => ({
+                                        ...prev,
+                                        [project.id]: true
+                                      }));
+                                      setProjectOptions(prev => ({
+                                        ...prev,
+                                        [project.id]: 'B'
+                                      }));
+                                    } else {
+                                      setProjectSelections(prev => ({
+                                        ...prev,
+                                        [project.id]: false
+                                      }));
+                                      setProjectOptions(prev => {
+                                        const newOptions = { ...prev };
+                                        delete newOptions[project.id];
+                                        return newOptions;
+                                      });
+                                    }
+                                  }}
+                                  className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
+                                />
+                                <span className="font-bold text-blue-800 text-sm md:text-base">
+                                  Fund {project.options.B.name} - ${project.options.B.nyForwardRequest.toLocaleString()}
+                                </span>
+                              </label>
+                            </div>
                           </div>
                         ) : (
-                          <label className="flex items-center space-x-3 cursor-pointer">
-                            <input
-                              type="checkbox"
-                              checked={projectSelections[project.id] || false}
-                              onChange={(e) => {
-                                // Double-check that project is not recused before allowing selection
-                                if (!evaluations[project.id]?.recused) {
-                                  setProjectSelections(prev => ({
-                                    ...prev,
-                                    [project.id]: e.target.checked
-                                  }));
-                                }
-                              }}
-                              className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
-                            />
-                            <span className="font-bold text-blue-800 text-sm md:text-base">Fund this Project</span>
-                          </label>
+                          <div className="bg-blue-100 border-2 border-blue-300 rounded-lg p-3 inline-block">
+                            <label className="flex items-center space-x-3 cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={projectSelections[project.id] || false}
+                                onChange={(e) => {
+                                  // Double-check that project is not recused before allowing selection
+                                  if (!evaluations[project.id]?.recused) {
+                                    setProjectSelections(prev => ({
+                                      ...prev,
+                                      [project.id]: e.target.checked
+                                    }));
+                                  }
+                                }}
+                                className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
+                              />
+                              <span className="font-bold text-blue-800 text-sm md:text-base">Fund this Project</span>
+                            </label>
+                          </div>
                         )}
                       </div>
                     )}
