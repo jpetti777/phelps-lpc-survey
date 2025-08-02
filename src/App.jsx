@@ -771,7 +771,7 @@ const LPCProjectEvaluationSurvey = () => {
         <div className="bg-white border border-gray-300 rounded-lg p-4 md:p-6 mb-6">
           <h2 className="text-lg md:text-xl font-bold mb-4">How We Will Use This Data</h2>
           <p className="mb-4 text-sm md:text-base">
-            The evaluations from all LPC members will be combined to create an overall rating for each project, either High, Medium, or Low. At the next LPC meeting, we will present which projects fell into each of the categories. This will help the LPC make decisions about which projects to keep under consideration for potential funding and which projects could be removed. <em>Note: Your individual responses will remain anonymous. Other LPC members will NOT be able to see your answers.</em>
+            The evaluations from all LPC members will be combined to create an overall rating for each project. At the next LPC meeting, we will present which projects fell into each of the categories. This will help the LPC make decisions about which projects to keep under consideration for potential funding and which projects could be removed. <em>Note: Your individual responses will remain anonymous. Other LPC members will NOT be able to see your answers.</em>
           </p>
         </div>
 
@@ -955,7 +955,7 @@ const LPCProjectEvaluationSurvey = () => {
               {[
                 { key: 'levelOfImpact', label: 'Level of Impact', desc: 'This project will have a significant positive impact on downtown Phelps and could spur additional investment. (Rate on a scale of High, Medium, Low.)' },
                 { key: 'projectReadiness', label: 'Project Readiness', desc: 'This project is well-developed and can be ready to break ground in a timely manner. (Rate on a scale of High, Medium, Low.)' },
-                { key: 'costEffectiveness', label: 'Cost-Effectiveness', desc: 'This project is a good use of public funds and the budget is reasonable. (Rate on a scale of High, Medium, Low.)' },
+                { key: 'costEffectiveness', label: 'Cost-Effectiveness', desc: 'This project is a good use of public funds and the budget is reasonable. Reminder: The LPC set target thresholds for NY Forward requests. These thresholds are: 65% maximum funding request for private projects, 95% maximum funding request for non-profit projects, and up to 100% request for public projects. (Rate on a scale of High, Medium, Low.)' },
                 { key: 'benefitsToComm', label: 'Benefits to the Community', desc: 'This project will result in benefits to the broader community, beyond just the project sponsor. (Rate on a scale of High, Medium, Low.)' }
               ].map(criteria => (
                 <div key={criteria.key} className="border border-gray-300 rounded-lg p-4">
