@@ -42,7 +42,7 @@ const Footer = () => (
   <div className="mt-8 pt-6">
     <hr className="border-gray-300 mb-4" />
     <div className="text-center">
-      <p className="text-gray-500 text-sm">Brockport NY Forward</p>
+      <p className="text-gray-500 text-sm">Phelps NY Forward</p>
     </div>
   </div>
 );
@@ -841,13 +841,13 @@ const LPCProjectEvaluationSurvey = () => {
             {project.hasOptions ? (
               <div className="space-y-2">
                 <p className="font-semibold text-sm md:text-base">
-                  {project.options.A.name} NY Forward Request: ${project.options.A.nyForwardRequest.toLocaleString()}
+                  {project.options.A.name} NY Forward Request: ${project.options.A.nyForwardRequest.toLocaleString()} ({Math.round((project.options.A.nyForwardRequest / project.options.A.totalCost) * 100)}% of total cost)
                 </p>
                 <p className="font-semibold text-sm md:text-base">
                   {project.options.A.name} Total Cost: ${project.options.A.totalCost.toLocaleString()}
                 </p>
-                <p className="font-semibold text-sm md:text-base mt-4">
-                  {project.options.B.name} NY Forward Request: ${project.options.B.nyForwardRequest.toLocaleString()}
+                <p className="font-semibold text-sm md:text-base">
+                  {project.options.B.name} NY Forward Request: ${project.options.B.nyForwardRequest.toLocaleString()} ({Math.round((project.options.B.nyForwardRequest / project.options.B.totalCost) * 100)}% of total cost)
                 </p>
                 <p className="font-semibold text-sm md:text-base">
                   {project.options.B.name} Total Cost: ${project.options.B.totalCost.toLocaleString()}
@@ -1274,7 +1274,7 @@ const LPCProjectEvaluationSurvey = () => {
             {/* Footer */}
             <div className="pt-4 border-t border-gray-300">
               <div className="text-center">
-                <p className="text-gray-500 text-sm">Brockport NY Forward</p>
+                <p className="text-gray-500 text-sm">Phelps NY Forward</p>
               </div>
             </div>
           </div>
