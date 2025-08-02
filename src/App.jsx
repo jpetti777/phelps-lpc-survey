@@ -451,7 +451,7 @@ const LPCProjectEvaluationSurvey = () => {
       // Warm up immediately when they land on the welcome page
       warmUpAPI();
     }
-  }, [currentPage, userName, warmUpAPI]);
+  }, [currentPage, warmUpAPI]);
 
   // Pre-warm before entering Step 2 (selection phase)
   useEffect(() => {
