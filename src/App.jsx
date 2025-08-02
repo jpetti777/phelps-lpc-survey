@@ -447,8 +447,8 @@ const LPCProjectEvaluationSurvey = () => {
 
   // Warm up API when user first arrives
   useEffect(() => {
-    if (currentPage === 'welcome' && userName) {
-      // Only warm up once user enters their name (shows intent to proceed)
+    if (currentPage === 'welcome') {
+      // Warm up immediately when they land on the welcome page
       warmUpAPI();
     }
   }, [currentPage, userName, warmUpAPI]);
