@@ -140,12 +140,12 @@ const LPCProjectEvaluationSurvey = () => {
       hasOptions: true,
       options: {
         A: {
-          name: "Option A (Phase 1)",
+          name: "Phase 1",
           nyForwardRequest: 400000,
           totalCost: 400000
         },
         B: {
-          name: "Option B (Phases 1 + 2)",
+          name: "Phases 1 and 2",
           nyForwardRequest: 1600000,
           totalCost: 1600000
         }
