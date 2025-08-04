@@ -752,9 +752,9 @@ const LPCProjectEvaluationSurvey = () => {
         <div className="bg-white border border-gray-300 rounded-lg p-4 md:p-6 mb-6">
           <h2 className="text-lg md:text-xl font-bold mb-4">Instructions</h2>
           <p className="mb-4 text-sm md:text-base">
-            This survey will walk you through a two-step process for evaluating the proposed projects. 
+            This survey will walk you through a two-step process to complete a preliminary evaluation of the proposed projects. 
             It is designed to help you identify the projects you think are most competitive for funding, 
-            in addition to the projects that could be removed from consideration.
+            in addition to the projects that could potentially be removed from consideration.
           </p>
 
           <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-4">
@@ -762,9 +762,9 @@ const LPCProjectEvaluationSurvey = () => {
           </div>
 
           <div className="space-y-4 mb-6 text-sm md:text-base">
-            <p><strong>Step 1:</strong> You will evaluate each project based on how well it aligns with the evaluation criteria established by the State and the LPC, using a scale of High, Medium, Low. Your answers will be aggregated and used to sort each project into three categories: High Rating projects that you scored the highest, Medium Rating projects that you scored moderately-well, and Low Rating projects that you scored the lowest.</p>
+            <p><strong>Step 1:</strong> You will evaluate each project based on how well it aligns with the evaluation criteria established by the State and the LPC. Your answers will be aggregated and used to sort each project into three categories: High Rating projects that you scored the highest, Medium Rating projects that you scored moderately-well, and Low Rating projects that you scored the lowest.</p>
 
-            <p><strong>Step 2:</strong> You will choose which projects you want to "fund" for the purposes of this exercise. As you select projects, a calculator will automatically sum the total NY Forward Request amount. You will only be able to submit your survey if the total NY Forward Request amount is between $6 million to $8 million. <em>Note: This is only an exercise. Your selections in this exercise are not definitive. There will be on-going discussions at the upcoming LPC meetings to narrow down the list of projects.</em></p>
+            <p><strong>Step 2:</strong> You will choose which projects you want to "fund" for the purposes of this exercise. As you select projects, a calculator will automatically sum the total NY Forward Request amount. You will only be able to submit your survey if the total NY Forward Request amount is between $6 million to $8 million. <em>Note: This is only an exercise. Your selections in this exercise are not final. There will be on-going discussions at the upcoming LPC meetings to narrow down the list of projects.</em></p>
           </div>
         </div>
 
