@@ -4,7 +4,7 @@ let client;
 let clientPromise;
 
 if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your Mongo URI to .env.local');
+  throw new Error('Please add ayour Mongo URI to .env.local');
 }
 
 if (process.env.NODE_ENV === 'development') {
@@ -60,6 +60,7 @@ export default async function handler(req, res) {
       scores,
       categories,
       projectSelections,
+      projectOptions,  // ← ADDED THIS
       totalRequest
     } = req.body;
 
@@ -70,8 +71,10 @@ export default async function handler(req, res) {
       hasScores: !!scores,
       hasCategories: !!categories,
       hasProjectSelections: !!projectSelections,
+      hasProjectOptions: !!projectOptions,  // ← ADDED THIS
       evaluationsCount: evaluations ? Object.keys(evaluations).length : 0,
-      selectionsCount: projectSelections ? Object.keys(projectSelections).length : 0
+      selectionsCount: projectSelections ? Object.keys(projectSelections).length : 0,
+      optionsCount: projectOptions ? Object.keys(projectOptions).length : 0  // ← ADDED THIS
     });
 
     // Validate required fields
@@ -86,6 +89,7 @@ export default async function handler(req, res) {
           scores: !!scores,
           categories: !!categories,
           projectSelections: !!projectSelections,
+          projectOptions: !!projectOptions,  // ← ADDED THIS
           totalRequest: totalRequest !== undefined
         }
       });
@@ -106,6 +110,7 @@ export default async function handler(req, res) {
       scores,
       categories,
       projectSelections,
+      projectOptions,  // ← ADDED THIS
       totalRequest,
       timestamp: new Date(),
       submittedAt: new Date().toISOString(),
@@ -124,6 +129,7 @@ export default async function handler(req, res) {
     const savedDoc = await collection.findOne({ _id: result.insertedId });
     console.log('🔍 Verification - Document exists:', !!savedDoc);
     console.log('🔍 Verification - Document userName:', savedDoc?.userName);
+    console.log('🔍 Verification - Document projectOptions:', savedDoc?.projectOptions);  // ← ADDED THIS
 
     console.log(`✅ Survey submitted by: ${userName} at ${new Date().toISOString()}`);
 
