@@ -347,9 +347,9 @@ const LPCProjectEvaluationSurvey = () => {
 
   // Categorize project based on score (UPDATED ranges)
   const categorizeProject = useCallback((score) => {
-    if (score >= 15) return 'High';    // 15-18
-    if (score >= 11) return 'Medium';  // 11-14
-    return 'Low';                      // 4-10
+    if (score >= 12) return 'High';    // 12-18
+    if (score >= 8) return 'Medium';   // 8-11
+    return 'Low';                      // 4-7
   }, []);
 
   // Initialize evaluations and load from backup - UPDATED: Use phelpsStrategies
