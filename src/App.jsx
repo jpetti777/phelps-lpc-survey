@@ -741,6 +741,32 @@ const LPCProjectEvaluationSurvey = () => {
     }
   };
 
+  // FIXED: Handle project option selection for projects with multiple options
+  const handleProjectOptionSelection = (projectId, option, checked) => {
+    if (checked) {
+      // Select this option and mark project as funded
+      setProjectSelections(prev => ({
+        ...prev,
+        [projectId]: true
+      }));
+      setProjectOptions(prev => ({
+        ...prev,
+        [projectId]: option
+      }));
+    } else {
+      // Deselect this option and mark project as not funded
+      setProjectSelections(prev => ({
+        ...prev,
+        [projectId]: false
+      }));
+      setProjectOptions(prev => {
+        const newOptions = { ...prev };
+        delete newOptions[projectId];
+        return newOptions;
+      });
+    }
+  };
+
   // Render welcome page
   const renderWelcomePage = () => (
     <div className="min-h-screen bg-white">
@@ -1127,28 +1153,7 @@ const LPCProjectEvaluationSurvey = () => {
                                 <input
                                   type="checkbox"
                                   checked={projectSelections[project.id] && projectOptions[project.id] === 'A'}
-                                  onChange={(e) => {
-                                    if (e.target.checked) {
-                                      setProjectSelections(prev => ({
-                                        ...prev,
-                                        [project.id]: true
-                                      }));
-                                      setProjectOptions(prev => ({
-                                        ...prev,
-                                        [project.id]: 'A'
-                                      }));
-                                    } else {
-                                      setProjectSelections(prev => ({
-                                        ...prev,
-                                        [project.id]: false
-                                      }));
-                                      setProjectOptions(prev => {
-                                        const newOptions = { ...prev };
-                                        delete newOptions[project.id];
-                                        return newOptions;
-                                      });
-                                    }
-                                  }}
+                                  onChange={(e) => handleProjectOptionSelection(project.id, 'A', e.target.checked)}
                                   className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
                                 />
                                 <span className="font-bold text-blue-800 text-sm md:text-base">
@@ -1161,28 +1166,7 @@ const LPCProjectEvaluationSurvey = () => {
                                 <input
                                   type="checkbox"
                                   checked={projectSelections[project.id] && projectOptions[project.id] === 'B'}
-                                  onChange={(e) => {
-                                    if (e.target.checked) {
-                                      setProjectSelections(prev => ({
-                                        ...prev,
-                                        [project.id]: true
-                                      }));
-                                      setProjectOptions(prev => ({
-                                        ...prev,
-                                        [project.id]: 'B'
-                                      }));
-                                    } else {
-                                      setProjectSelections(prev => ({
-                                        ...prev,
-                                        [project.id]: false
-                                      }));
-                                      setProjectOptions(prev => {
-                                        const newOptions = { ...prev };
-                                        delete newOptions[project.id];
-                                        return newOptions;
-                                      });
-                                    }
-                                  }}
+                                  onChange={(e) => handleProjectOptionSelection(project.id, 'B', e.target.checked)}
                                   className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
                                 />
                                 <span className="font-bold text-blue-800 text-sm md:text-base">
