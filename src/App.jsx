@@ -100,13 +100,13 @@ const ConfirmDialog = ({ isOpen, title, message, onConfirm, onCancel, singleButt
 };
 
 const LPCProjectEvaluationSurvey = () => {
-  // Real project data from the spreadsheet
+  // Real project data from the spreadsheet - REMOVED PROJECT 14 AND RENUMBERED
   const projects = [
     {
       id: 1,
       title: "Main Street Streetscape",
       location: "Main Street, from Ontario Street to Wayne Street",
-      description: "This project will enhance and beautify Main Street with new amenities, including benches, planter boxes, hanging planters, and trash/recycling receptacles. The project will also take steps to improve pedestrian and vehicular safety through enhanced crosswalk treatments and the installation of a landscaped median from Exchange Street to the Ontario Telephone Company driveway. ",
+      description: "This project will enhance and beautify Main Street with new amenities, including benches, planter boxes, hanging planters, and trash/recycling receptacles. The project will also take steps to improve pedestrian and vehicular safety through enhanced crosswalk treatments and the installation of a landscaped median from Exchange Street to the Ontario Telephone Company driveway.",
       nyForwardRequest: 500000,
       totalCost: 500000,
       image: "/images/project-1.jpg"
@@ -116,8 +116,8 @@ const LPCProjectEvaluationSurvey = () => {
       title: "Exchange Street Festival Street and Parking Lot Enhancements",
       location: "Exchange Street and Exchange Street Parking Lot",
       description: "This project will enhance Exchange Street with new amenities that will make it more pedestrian-friendly and easier to temporarily close the street for festivals and events. These amenities will include string lights, benches, and a unique pavement treatment. This project will also enhance the Exchange Street parking lot with new landscaped islands. In addition, the Harvest Host area in the parking lot will be formalized with amenities including RV electrical hookups, benches, trash receptacles, and a unique pavement treatment.",
-      nyForwardRequest: 1630000,
-      totalCost: 1630000,
+      nyForwardRequest: 1520000,
+      totalCost: 1520000,
       image: "/images/project-2.jpg"
     },
     {
@@ -125,15 +125,15 @@ const LPCProjectEvaluationSurvey = () => {
       title: "Church Street Improvements",
       location: "Church Street, from Main Street to parking lot entry",
       description: "This project will enhance Church Street with new amenities that will make it more pedestrian-friendly and easier to temporarily close the street for festivals and events. These amenities will include string lights, benches, and a unique pavement treatment.",
-      nyForwardRequest: 900000,
-      totalCost: 900000,
+      nyForwardRequest: 810000,
+      totalCost: 810000,
       image: "/images/project-3.jpg"
     },
     {
       id: 4,
       title: "Crooked Bridge Park Improvements",
       location: "Crooked Bridge Park",
-      description: "This project will activate Crooked Bridge Park with the addition of terraced seating on the slope, a kayak pull-out on Flint Creek, and an ADA-accessible pathway to the creek (Phase 1 improvements). Phase 2 of this project will construct a large pavilion at the park, with a stage, seating, and outdoor kitchen space included.",
+      description: "This project will activate Crooked Bridge Park with the addition of terraced seating on the slope, a kayak pull-out on Flint Creek, and an ADA-accessible pathway to the creek (Phase 1 improvements). Phase 2 of this project will construct a large pavilion at the park, with a stage, seating, and outdoor kitchen space included. This project can be pursued in phases or as one full project. Phase 1 has a total cost of $400,000 while the full project (Phases 1 and 2) has a total cost of $1,600,000.",
       nyForwardRequest: 400000, // Default to Option A
       totalCost: 400000,
       image: "/images/project-4.jpg",
@@ -227,37 +227,28 @@ const LPCProjectEvaluationSurvey = () => {
       id: 13,
       title: "2-10 Flint Street Improvements",
       location: "2-10 Flint Street",
-      description: "This project will take necessary steps to make the upper floors of the building at 2-10 Flint Street into usable commercial space. Project work will include structural improvements, roof repairs, interior and exterior carpentry work, and exterior paint.",
+      description: "This project will take necessary steps to make the upper floors of the building at 2-10 Flint Street into usable event space. Project work will include structural improvements, roof repairs, interior and exterior carpentry work, and exterior paint. The future vision for the building is to transform the upper floors into a unique event venue for functions like performances, concerts, weddings, and more.",
       nyForwardRequest: 70000,
       totalCost: 180000,
       image: "/images/project-13.jpg"
     },
     {
       id: 14,
-      title: "Melt on Main Enhancements",
+      title: "114 Main Street Enhancements",
       location: "114 Main Street",
-      description: "This project will enhance the Melt on Main ice cream shop with new bay windows overlooking Main Street, an updated front entry that is ADA accessible, awnings on both the front and back of the building, and new entry doors. Plumbing and electrical systems will also be installed in the alley along the side of the building to expand event and programming opportunities in this space. In addition, a new hood/insulation/fire suppression system will be installed in the ice cream shop. ",
-      nyForwardRequest: 75000,
-      totalCost: 93000,
+      description: "This project will upgrade and enhance the 114 Main Street building with multiple improvements. On the first floor, the Melt on Main ice cream shop will receive new bay windows overlooking Main Street, an updated ADA-accessible front entry, awnings on both front and back, new entry doors, and an upgraded hood/insulation/fire suppression system. Plumbing and electrical systems will be installed in the side alley to expand event and programming opportunities. The currently vacant third floor will be renovated to support a studio apartment with new electrical systems, water supply, exhaust fan, fire escape, and roof access. The building facade will be improved with fresh paint, brick restoration, and mural restoration. Additional building improvements include elevator shaft renovation, roof seam flashing and reinforcement, and installation of a separate water main to the building.",
+      nyForwardRequest: 150000,
+      totalCost: 206000,
       image: "/images/project-14.jpg"
     },
     {
       id: 15,
-      title: "114 Main Street Improvements",
-      location: "114 Main Street",
-      description: "This project will update the 114 Main Street building to allow for the currently vacant third floor to be renovated into a studio apartment. Project work will install new electrical systems, water supply, and an exhaust fan on the third floor, as well as a fire escape and roof access. The facade of the building will also be improved with new paint, brick restoration, and a restored mural. Other building improvements will include renovation of the elevator shaft, roof seam flashing and reinforcement, and installation of a separate water main to the building.",
-      nyForwardRequest: 75000,
-      totalCost: 113000,
-      image: "/images/project-15.jpg"
-    },
-    {
-      id: 16,
       title: "Smokin' Tails Enhancements",
       location: "3 Church Street",
-      description: "This project will enhance the Holler Event Space at Smokin' Tails Distillery with new amenities, including a two-story rooftop patio, full rooftop bar, fire brick oven, and refrigeration and storage space. The front facade of the building will also be restored to its historic appearance, with new paint, an awning, brick work, and business signage. Project work will also include the addition of a mural on the west side of the building and new door and window installation on the front and back of the building.",
+      description: "This project will enhance the Holler Event Space at Smokin' Tails Distillery with new amenities, including a two-story rooftop patio, full rooftop bar, fire brick oven, and refrigeration and storage space. Inside the building, a speakeasy will be constructed above the downstairs bar, creating a unique gathering space. The front facade of the building will also be restored to its historic appearance, with new paint, an awning, brick work, and business signage. Project work will also include the addition of a mural on the west side of the building and new door and window installation on the front and back of the building.",
       nyForwardRequest: 150000,
       totalCost: 150000,
-      image: "/images/project-16.jpg"
+      image: "/images/project-15.jpg"
     },
 
   ];
